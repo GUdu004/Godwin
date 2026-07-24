@@ -1,176 +1,106 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
-import { Menu, X, Download, Mail, ExternalLink } from "lucide-react";
+import { Download, ExternalLink, X } from "lucide-react";
 
-const Linkedin = (props: React.SVGProps<SVGSVGElement>) => (
-  <svg
-    viewBox="0 0 24 24"
-    fill="none"
-    stroke="currentColor"
-    strokeWidth="2"
-    strokeLinecap="round"
-    strokeLinejoin="round"
-    {...props}
-  >
-    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
-    <rect width="4" height="12" x="2" y="9" />
-    <circle cx="4" cy="4" r="2" />
-  </svg>
-);
+export function Navbar() {
+  const [open, setOpen] = useState(false);
 
-export default function Navbar() {
-  const pathname = usePathname();
-  const [isOpen, setIsOpen] = useState(false);
-  const [isScrolled, setIsScrolled] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY > 10) {
-        setIsScrolled(true);
-      } else {
-        setIsScrolled(false);
-      }
-    };
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
-  const navLinks = [
-    { name: "Projects", href: pathname === "/" ? "#projects" : "/#projects" },
-    { name: "Design Systems", href: pathname === "/" ? "#design-systems" : "/#design-systems" },
-    { name: "About", href: pathname === "/" ? "#about" : "/#about" },
-    { name: "Resume", href: "/resume" },
-  ];
+  const close = () => setOpen(false);
 
   return (
-    <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 no-print ${
-        isScrolled
-          ? "bg-bg-primary/80 border-b border-border-muted backdrop-blur-md py-4"
-          : "bg-transparent py-6"
-      }`}
-    >
-      <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
-        {/* Logo */}
-        <Link href="/" className="group flex items-center gap-2">
-          <span className="font-geist font-bold text-xl tracking-tight text-text-primary">
-            Godwin Udu<span className="text-accent-green">.</span>
-          </span>
-          <span className="hidden sm:inline-block px-2 py-0.5 text-[10px] font-mono border border-border-muted text-text-muted rounded-full group-hover:border-neutral-700 transition-colors">
-            Product Designer
-          </span>
-        </Link>
+    <>
+      {/* ── Top bar ─────────────────────────────────────────── */}
+      <header className="sticky top-0 z-50 w-full glass-header border-b border-border-muted">
+        <div className="max-w-7xl mx-auto px-6 h-14 flex items-center justify-between">
 
-        {/* Desktop Nav */}
-        <div className="hidden md:flex items-center gap-8">
-          <div className="flex items-center gap-6">
-            {navLinks.map((link) => (
-              <Link
-                key={link.name}
-                href={link.href}
-                className={`text-sm font-medium hover:text-text-primary transition-colors ${
-                  (pathname === link.href || (pathname === "/resume" && link.name === "Resume"))
-                    ? "text-text-primary font-semibold"
-                    : "text-text-secondary"
-                }`}
-              >
-                {link.name}
-              </Link>
-            ))}
-          </div>
+          {/* Wordmark */}
+          <Link href="/" className="font-bold text-text-primary text-[21px] tracking-tight hover:opacity-70 transition-opacity" onClick={close}>
+            Godwin Udu
+          </Link>
 
-          <div className="h-4 w-[1px] bg-border-muted" />
-
-          {/* Socials & Actions */}
-          <div className="flex items-center gap-4">
-            <a
-              href="https://linkedin.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="LinkedIn"
-              className="text-text-secondary hover:text-text-primary transition-colors"
-            >
-              <Linkedin className="w-4 h-4" />
-            </a>
-            <a
-              href="mailto:godwinudu01@gmail.com"
-              aria-label="Email"
-              className="text-text-secondary hover:text-text-primary transition-colors"
-            >
-              <Mail className="w-4 h-4" />
-            </a>
-            <a
-              href="/GodwinUdu_Portfolio_ProductDesign.pdf"
-              download
-              className="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-bg-secondary border border-border-muted text-xs font-medium text-text-primary hover:bg-neutral-950 hover:border-neutral-700 transition-all"
-            >
-              <Download className="w-3.5 h-3.5 text-accent-green" />
-              <span>Resume PDF</span>
-            </a>
-          </div>
-        </div>
-
-        {/* Mobile menu button */}
-        <div className="md:hidden flex items-center gap-3">
-          <a
-            href="/GodwinUdu_Portfolio_ProductDesign.pdf"
-            download
-            className="flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg bg-bg-secondary border border-border-muted text-[11px] font-medium text-text-primary hover:bg-neutral-950 transition-all"
-          >
-            <Download className="w-3 h-3 text-accent-green" />
-            <span>PDF</span>
-          </a>
+          {/* Hamburger — two lines like Fabrica */}
           <button
-            onClick={() => setIsOpen(!isOpen)}
-            className="text-text-secondary hover:text-text-primary transition-colors p-1"
-            aria-label="Toggle Menu"
+            onClick={() => setOpen((v) => !v)}
+            aria-label={open ? "Close menu" : "Open menu"}
+            aria-expanded={open}
+            className="flex flex-col gap-[5px] p-2 rounded-md hover:bg-bg-tertiary transition-colors group"
           >
-            {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            <span
+              className={`block h-[1.5px] bg-text-primary transition-all duration-300 origin-center ${
+                open ? "w-5 rotate-45 translate-y-[3.5px]" : "w-5"
+              }`}
+            />
+            <span
+              className={`block h-[1.5px] bg-text-primary transition-all duration-300 ${
+                open ? "w-5 -rotate-45 -translate-y-[3.5px]" : "w-4"
+              }`}
+            />
           </button>
         </div>
-      </div>
+      </header>
 
-      {/* Mobile Menu */}
-      {isOpen && (
-        <div className="md:hidden absolute top-full left-0 right-0 bg-bg-primary/95 border-b border-border-muted backdrop-blur-lg px-6 py-8 flex flex-col gap-6">
-          <div className="flex flex-col gap-4">
-            {navLinks.map((link) => (
+      {/* ── Drawer overlay ──────────────────────────────────── */}
+      <nav className={`nav-drawer ${open ? "open" : "closed"} z-40`}>
+        <div className="max-w-7xl mx-auto px-6 w-full flex-grow flex flex-col pt-4 pb-10">
+          {/* Close button (top-right, aligned with grid) */}
+          <div className="flex justify-end h-14 items-center">
+            <button
+              onClick={close}
+              aria-label="Close menu"
+              className="p-2 -mr-2 rounded-md hover:bg-bg-tertiary transition-colors"
+            >
+              <X className="w-5 h-5 text-text-primary" />
+            </button>
+          </div>
+
+          {/* Nav links — large editorial style aligned with header logo */}
+          <div className="flex flex-col gap-1 mt-4 sm:mt-8">
+            {[
+              { label: "Work", href: "/#work" },
+              { label: "Skills", href: "/#skills" },
+              { label: "About", href: "/#about" },
+              { label: "Resume / ATS", href: "/resume" },
+            ].map((item) => (
               <Link
-                key={link.name}
-                href={link.href}
-                onClick={() => setIsOpen(false)}
-                className={`text-base font-medium py-2 border-b border-neutral-900 ${
-                  pathname === link.href ? "text-text-primary" : "text-text-secondary"
-                }`}
+                key={item.href}
+                href={item.href}
+                onClick={close}
+                className="text-4xl sm:text-5xl font-extrabold text-text-primary hover:text-text-secondary tracking-tight transition-colors py-1"
               >
-                {link.name}
+                {item.label}
               </Link>
             ))}
           </div>
 
-          <div className="flex items-center gap-6 pt-4 border-t border-neutral-900">
+          {/* Divider & Action Buttons */}
+          <div className="mt-auto pt-8 border-t border-border-muted flex flex-col sm:flex-row gap-4">
             <a
-              href="https://linkedin.com"
+              href="/GodwinUdu_Portfolio_ProductDesign.pdf"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2 text-sm text-text-secondary hover:text-text-primary transition-colors"
+              onClick={close}
+              className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl border border-border-active text-text-primary font-semibold text-sm hover:bg-bg-tertiary transition-all"
             >
-              <Linkedin className="w-4 h-4" />
-              <span>LinkedIn</span>
+              <Download className="w-4 h-4" />
+              Download Portfolio PDF
             </a>
             <a
-              href="mailto:godwinudu01@gmail.com"
-              className="flex items-center gap-2 text-sm text-text-secondary hover:text-text-primary transition-colors"
+              href="https://linkedin.com/in/godwinudu"
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={close}
+              className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-text-primary text-bg-primary font-semibold text-sm hover:bg-black/80 transition-all"
             >
-              <Mail className="w-4 h-4" />
-              <span>Email</span>
+              LinkedIn
+              <ExternalLink className="w-3.5 h-3.5" />
             </a>
           </div>
         </div>
-      )}
-    </nav>
+      </nav>
+    </>
   );
 }
+
+export default Navbar;

@@ -2,295 +2,261 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
-import { 
-  ArrowLeft, 
+import {
+  ArrowLeft,
   ArrowRight,
-  TrendingUp, 
-  Users, 
+  TrendingUp,
+  Users,
   Database,
   Layers,
   ShieldCheck,
-  Check,
-  Info,
+  CheckCircle2,
   WifiOff,
   RefreshCw,
-  Clock
+  Clock,
+  ZoomIn
 } from "lucide-react";
+import { Navbar } from "./Navbar";
+import { ImageLightbox } from "./ImageLightbox";
 
 export default function MyEduFusionCaseStudy() {
-  const [syncState, setSyncState] = useState<"offline" | "validating" | "synced">("offline");
+  const [activeImage, setActiveImage] = useState<{ src: string; alt: string } | null>(null);
 
-  const syncStateInfo = {
-    offline: {
-      title: "Offline Loop (Excel Entry)",
-      desc: "Administrators edit grades and financials locally on formatted templates without network dependency, eliminating session time-outs.",
-      color: "border-accent-orange/40 bg-accent-orange/5 text-accent-orange"
+  const metrics = [
+    { label: "Adopted Schools", value: "70+", unit: "Institutions", desc: "Deployed across primary, secondary, and tertiary schools." },
+    { label: "Revenue Impact", value: "+283%", unit: "Growth", desc: "Accelerated subscription revenue through offline compliance." },
+    { label: "Active Students", value: "8,000+", unit: "Enrolled", desc: "Managing grades, attendance, and tuition records." }
+  ];
+
+  const storyboardSlides = [
+    {
+      title: "1. Comprehensive Administrative SIS Dashboard",
+      desc: "Unified analytics dashboard providing real-time visibility into attendance trends, fee collection status, and academic performance.",
+      image: "/images/projects/myedufusion/slide_23.png",
+      tag: "Enterprise Dashboard"
     },
-    validating: {
-      title: "Synchronization Wizard (Validation)",
-      desc: "The import module parses Excel sheets and validates column schemas against active student structures before committing changes.",
-      color: "border-accent-blue/40 bg-accent-blue/5 text-accent-blue animate-pulse"
+    {
+      title: "2. Offline-First Excel Synchronization Engine",
+      desc: "Bulk record management module allowing administrators to enter student grades offline on standardized templates with zero data loss.",
+      image: "/images/projects/myedufusion/slide_25.png",
+      tag: "Offline-First Sync"
     },
-    synced: {
-      title: "Successful Cloud Sync",
-      desc: "Validated batch records commit to the remote database securely once stable connection is confirmed, updating dashboard metrics.",
-      color: "border-accent-green/40 bg-accent-green/5 text-accent-green"
+    {
+      title: "3. Wireframe to High-Fidelity Design Process",
+      desc: "Hand-sketched wireframes iterated through digital lo-fi prototypes to WCAG 2.1 AA-compliant high-fidelity screens — validating structure before visual design investment.",
+      image: "/images/projects/myedufusion/slide_27.png",
+      tag: "Design Process"
+    },
+    {
+      title: "4. WCAG 2.1 AA Tokenized Figma Design System",
+      desc: "High-contrast accessible color tokens, screen-reader compatible table views, and dark/light mode variables built for low-bandwidth devices.",
+      image: "/images/projects/myedufusion/slide_28.png",
+      tag: "Design System & A11y"
     }
-  };
+  ];
 
   return (
     <div className="min-h-screen bg-bg-primary text-text-secondary">
-      {/* Back Header */}
-      <div className="max-w-7xl mx-auto px-6 pt-12 no-print">
-        <Link 
-          href="/" 
-          className="inline-flex items-center gap-2 text-sm text-text-secondary hover:text-text-primary transition-colors"
+      {/* Breadcrumb Back Link */}
+      <div className="max-w-7xl mx-auto px-6 pt-8">
+        <Link
+          href="/"
+          className="inline-flex items-center gap-2 text-xs font-semibold text-text-muted hover:text-text-primary transition-colors"
         >
           <ArrowLeft className="w-4 h-4" />
-          <span>Back to Portfolio</span>
+          <span>Back to Work Overview</span>
         </Link>
       </div>
 
       {/* Hero Header */}
-      <header className="max-w-7xl mx-auto px-6 pt-8 pb-16 flex flex-col gap-6">
-        <div className="flex items-center gap-2 px-3 py-1 w-fit rounded-full border border-accent-green/30 bg-accent-green/10 text-xs font-mono text-accent-green">
-          <span>Case Study: Enterprise SIS &amp; Offline Systems</span>
-        </div>
-        <h1 className="font-geist text-4xl sm:text-6xl font-bold tracking-tight text-text-primary">
+      <header className="max-w-7xl mx-auto px-6 py-8 flex flex-col gap-6">
+        <span className="section-label">Case Study: Enterprise SIS & Offline Systems</span>
+
+        <h1 className="text-4xl sm:text-6xl font-extrabold tracking-tight text-text-primary">
           MyEduFusion
         </h1>
-        <p className="font-geist text-xl sm:text-2xl text-text-primary max-w-4xl leading-snug font-medium">
-          Fault-Tolerant Enterprise SIS &amp; Offline-First Design System
+        <p className="text-xl sm:text-2xl text-text-secondary max-w-4xl leading-snug font-normal">
+          Fault-tolerant Student Information System (SIS) engineered for low-connectivity environments, scaling across 70+ institutions.
         </p>
 
-        {/* Metadata grid */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 pt-8 border-t border-border-muted max-w-4xl text-xs">
-          <div className="flex flex-col gap-1.5">
-            <span className="text-text-muted font-mono uppercase tracking-wider">My Role</span>
-            <span className="text-text-primary font-bold">UI/UX Lead &amp; Systems Designer</span>
+        {/* Metadata Grid */}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 pt-6 border-t border-border-muted max-w-4xl text-xs">
+          <div className="flex flex-col gap-1">
+            <span className="text-text-muted font-mono uppercase tracking-wider">Role</span>
+            <span className="text-text-primary font-bold">UI/UX Lead & Systems Designer</span>
           </div>
-          <div className="flex flex-col gap-1.5">
+          <div className="flex flex-col gap-1">
             <span className="text-text-muted font-mono uppercase tracking-wider">Timeline</span>
-            <span className="text-text-primary font-bold">2 Months (Launch &amp; Iteration)</span>
+            <span className="text-text-primary font-bold">2 Months (Launch & Iteration)</span>
           </div>
-          <div className="flex flex-col gap-1.5">
-            <span className="text-text-muted font-mono uppercase tracking-wider">Toolkit</span>
-            <span className="text-text-primary font-bold">Figma, Miro, Notion, Tokens</span>
-          </div>
-          <div className="flex flex-col gap-1.5">
+          <div className="flex flex-col gap-1">
             <span className="text-text-muted font-mono uppercase tracking-wider">Domain</span>
-            <span className="text-text-primary font-bold">Enterprise SaaS / Education Tech</span>
+            <span className="text-text-primary font-bold">Enterprise SaaS / Offline Sync</span>
+          </div>
+          <div className="flex flex-col gap-1">
+            <span className="text-text-muted font-mono uppercase tracking-wider">Impact</span>
+            <span className="text-text-primary font-bold">+283% Revenue Acceleration</span>
           </div>
         </div>
       </header>
 
-      {/* Main Content Layout */}
-      <article className="max-w-7xl mx-auto px-6 pb-24 grid grid-cols-1 lg:grid-cols-12 gap-12">
-        {/* Case Narrative (Left Column) */}
-        <div className="lg:col-span-8 flex flex-col gap-16">
-          
-          {/* Executive Summary Card */}
-          <section className="p-8 rounded-2xl border border-accent-green/20 bg-accent-green/5 flex flex-col gap-6">
-            <h2 className="font-geist font-bold text-text-primary text-xl">Executive Summary Card</h2>
-            
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              <div className="flex flex-col gap-4">
-                <div>
-                  <h3 className="text-xs font-mono text-text-muted uppercase tracking-wider mb-1">The Business Challenge</h3>
-                  <p className="text-xs leading-relaxed text-text-secondary">
-                    Nigerian educational institutions faced high drop-off and data losses during grade/fee logging because of frequent internet connectivity drops and manual paper processing loops.
-                  </p>
-                </div>
-                <div>
-                  <h3 className="text-xs font-mono text-text-muted uppercase tracking-wider mb-1">My Role &amp; Collaboration</h3>
-                  <p className="text-xs leading-relaxed text-text-secondary">
-                    Led system architecture, offline upload user flows, and brand design library. Collaborated directly with 1 Lead Engineer and 2 developers.
-                  </p>
-                </div>
-              </div>
-
-              <div className="flex flex-col gap-4">
-                <h3 className="text-xs font-mono text-text-muted uppercase tracking-wider mb-2">Proven Metrics &amp; Outcome</h3>
-                <div className="flex flex-col gap-3">
-                  <div className="flex items-center gap-3">
-                    <div className="p-1.5 rounded-lg bg-bg-secondary border border-border-muted text-accent-green">
-                      <Layers className="w-4 h-4" />
-                    </div>
-                    <div className="flex flex-col">
-                      <span className="text-xs font-bold text-text-primary">70+ Institutional Installations</span>
-                      <span className="text-[10px] text-text-muted">Scaled from 12 initial test sites</span>
-                    </div>
-                  </div>
-
-                  <div className="flex items-center gap-3">
-                    <div className="p-1.5 rounded-lg bg-bg-secondary border border-border-muted text-accent-green">
-                      <TrendingUp className="w-4 h-4" />
-                    </div>
-                    <div className="flex flex-col">
-                      <span className="text-xs font-bold text-text-primary">283% Revenue Growth Acceleration</span>
-                      <span className="text-[10px] text-text-muted">Driven by automated fee-management portals</span>
-                    </div>
-                  </div>
-
-                  <div className="flex items-center gap-3">
-                    <div className="p-1.5 rounded-lg bg-bg-secondary border border-border-muted text-accent-green">
-                      <Users className="w-4 h-4" />
-                    </div>
-                    <div className="flex flex-col">
-                      <span className="text-xs font-bold text-text-primary">8,000+ Active Students</span>
-                      <span className="text-[10px] text-text-muted">60% retention rate across regional networks</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </section>
-
-          {/* 1. Resilient Offline Architecture */}
-          <section className="flex flex-col gap-6">
-            <div className="flex items-center gap-2">
-              <span className="px-2 py-0.5 rounded-md border border-neutral-800 text-[10px] font-mono text-text-muted">SECTION 01</span>
-              <h2 className="font-geist font-bold text-text-primary text-xl">Fault-Tolerant Offline Sync Loop</h2>
-            </div>
-            <p className="text-sm leading-relaxed">
-              To circumvent infrastructure barriers, I designed an offline-to-online data entry architecture. Administrators utilize a locally stored, pre-formatted Excel template. When network states normalize, they sync everything securely.
-            </p>
-
-            {/* Interactive Sync Simulator */}
-            <div className="p-6 rounded-2xl border border-border-muted bg-bg-secondary/40 flex flex-col gap-6">
-              <div className="flex items-center justify-between border-b border-border-muted pb-3">
-                <span className="text-xs font-bold text-text-primary font-mono">Interactive Sync State Simulator</span>
-                <div className="flex gap-2">
-                  <button 
-                    onClick={() => setSyncState("offline")}
-                    className={`px-2.5 py-1 rounded text-[10px] font-mono transition-colors border ${syncState === "offline" ? "bg-accent-orange/10 border-accent-orange text-accent-orange" : "border-border-muted text-text-muted"}`}
-                  >
-                    1. Offline
-                  </button>
-                  <button 
-                    onClick={() => setSyncState("validating")}
-                    className={`px-2.5 py-1 rounded text-[10px] font-mono transition-colors border ${syncState === "validating" ? "bg-accent-blue/10 border-accent-blue text-accent-blue" : "border-border-muted text-text-muted"}`}
-                  >
-                    2. Validate
-                  </button>
-                  <button 
-                    onClick={() => setSyncState("synced")}
-                    className={`px-2.5 py-1 rounded text-[10px] font-mono transition-colors border ${syncState === "synced" ? "bg-accent-green/10 border-accent-green text-accent-green" : "border-border-muted text-text-muted"}`}
-                  >
-                    3. Synced
-                  </button>
-                </div>
-              </div>
-
-              {/* Simulator Card */}
-              <div className={`p-5 rounded-xl border flex flex-col gap-3 transition-colors ${syncStateInfo[syncState].color}`}>
-                <div className="flex items-center gap-2 font-bold text-xs font-mono">
-                  {syncState === "offline" && <WifiOff className="w-4 h-4" />}
-                  {syncState === "validating" && <RefreshCw className="w-4 h-4 animate-spin" />}
-                  {syncState === "synced" && <ShieldCheck className="w-4 h-4" />}
-                  <span>{syncStateInfo[syncState].title}</span>
-                </div>
-                <p className="text-xs leading-relaxed text-text-secondary">{syncStateInfo[syncState].desc}</p>
-              </div>
-            </div>
-          </section>
-
-          {/* 2. Accessibility Decisions */}
-          <section className="flex flex-col gap-6">
-            <div className="flex items-center gap-2">
-              <span className="px-2 py-0.5 rounded-md border border-neutral-800 text-[10px] font-mono text-text-muted">SECTION 02</span>
-              <h2 className="font-geist font-bold text-text-primary text-xl">Accessibility &amp; Chart Optimization</h2>
-            </div>
-            <p className="text-sm leading-relaxed">
-              Nigeria adopting schools commonly operated with low-end monitors and under various lighting conditions. Design requirements mandated high accessibility standards:
-            </p>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div className="p-6 rounded-xl border border-border-muted bg-bg-secondary/40 flex flex-col gap-4">
-                <h4 className="font-geist font-bold text-text-primary text-xs uppercase tracking-wider">A11y Principles Applied:</h4>
-                <ul className="flex flex-col gap-3 text-xs">
-                  <li className="flex items-start gap-2">
-                    <Check className="w-4 h-4 text-accent-green mt-0.5 flex-shrink-0" />
-                    <div>
-                      <strong className="text-text-primary">Colorblind Friendly:</strong> Financial charts use distinct styling markers (shapes/dots) in addition to colors to guarantee readability.
-                    </div>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <Check className="w-4 h-4 text-accent-green mt-0.5 flex-shrink-0" />
-                    <div>
-                      <strong className="text-text-primary">Contrast Optimization:</strong> Screen elements contrast ratio exceeds WCAG 2.1 AA benchmarks, validated on 8-bit regional displays.
-                    </div>
-                  </li>
-                </ul>
-              </div>
-
-              <div className="p-6 rounded-xl border border-border-muted bg-bg-secondary/40 flex flex-col gap-4">
-                <h4 className="font-geist font-bold text-text-primary text-xs uppercase tracking-wider">Infrastructure Constraints Met:</h4>
-                <ul className="flex flex-col gap-3 text-xs">
-                  <li className="flex items-start gap-2">
-                    <Check className="w-4 h-4 text-accent-green mt-0.5 flex-shrink-0" />
-                    <div>
-                      <strong className="text-text-primary">Fault-Tolerant Forms:</strong> Ingestion upload progress-bars render validations and cached local recovery options upon sudden timeout.
-                    </div>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <Check className="w-4 h-4 text-accent-green mt-0.5 flex-shrink-0" />
-                    <div>
-                      <strong className="text-text-primary">Tabular Simplification:</strong> Result sheets compilation uses simplified layouts reducing cognitive weight on operators entering grades rapidly.
-                    </div>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </section>
-
-          {/* 3. Design Tokens Contribution */}
-          <section className="flex flex-col gap-6">
-            <div className="flex items-center gap-2">
-              <span className="px-2 py-0.5 rounded-md border border-neutral-800 text-[10px] font-mono text-text-muted">SECTION 03</span>
-              <h2 className="font-geist font-bold text-text-primary text-xl">Figma Tokens &amp; Operational Sprints</h2>
-            </div>
-            <p className="text-sm leading-relaxed">
-              To support the fast-evolving frontend, I organized the UI framework into components backed by Figma design tokens. Testing this unified layout library resulted in a **63% increase** in administrative bookkeeping and bookkeeping validation efficiency.
-            </p>
-          </section>
-
+      {/* Main Full-Bleed Hero Image Showcase */}
+      <section className="max-w-7xl mx-auto px-6 mb-16">
+        <div
+          className="relative group aspect-[16/9] w-full rounded-2xl overflow-hidden border border-border-muted bg-bg-tertiary fabrica-shadow cursor-pointer"
+          onClick={() => setActiveImage({ src: "/images/projects/myedufusion/slide_23.png", alt: "MyEduFusion Overview Dashboard" })}
+        >
+          <img
+            src="/images/projects/myedufusion/slide_23.png"
+            alt="MyEduFusion Product Overview"
+            className="w-full h-full object-contain bg-white group-hover:scale-[1.02] transition-transform duration-500"
+          />
+          <div className="absolute top-4 right-4 p-2.5 rounded-xl bg-black/60 backdrop-blur-md text-white opacity-0 group-hover:opacity-100 transition-opacity flex items-center gap-2 text-xs">
+            <ZoomIn className="w-4 h-4" />
+            <span>Click to View High-Res Mockup</span>
+          </div>
         </div>
+      </section>
 
-        {/* Sidebar */}
-        <aside className="lg:col-span-4 flex flex-col gap-8 no-print">
-          <div className="p-6 rounded-xl border border-border-muted bg-bg-secondary/20 flex flex-col gap-6">
-            <h3 className="font-geist font-bold text-text-primary text-sm uppercase tracking-wider border-b border-border-muted pb-3">
-              Case Study Navigation
-            </h3>
-            <ul className="flex flex-col gap-3 text-xs font-mono">
-              <li className="flex items-center justify-between text-accent-green font-bold">
-                <span>01. Offline Ingestion</span>
-                <span className="text-[10px] text-text-muted">Fault-Tolerant Loop</span>
+      {/* Key Metric Cards — split-card hover-merge layout */}
+      <section className="max-w-7xl mx-auto px-6 mb-20">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {metrics.map((m, idx) => (
+            <div key={idx} className="group flex flex-col">
+
+              {/* Upper card: large stat value + index number */}
+              <div className="
+                border border-border-muted bg-bg-secondary fabrica-shadow
+                rounded-2xl group-hover:rounded-b-none
+                p-6 mb-[5px] group-hover:mb-0
+                group-hover:[border-bottom-color:transparent]
+                transition-all duration-300 ease-in-out
+              ">
+                <div className="flex items-start justify-between">
+                  <div className="flex flex-col gap-1">
+                    <span className="text-4xl font-extrabold text-text-primary leading-none tracking-tight">
+                      {m.value}
+                    </span>
+                    <span className="text-4xl font-normal text-text-secondary leading-none tracking-tight">
+                      {m.unit}
+                    </span>
+                  </div>
+                  <span className="font-mono text-[11px] text-text-muted">
+                    {String(idx + 1).padStart(2, "0")}
+                  </span>
+                </div>
+              </div>
+
+              {/* Lower card: right-aligned label + left-aligned description */}
+              <div className="
+                border border-border-muted bg-bg-secondary fabrica-shadow
+                rounded-2xl group-hover:rounded-t-none
+                p-6 flex flex-col justify-between min-h-[260px]
+                group-hover:[border-top-color:transparent]
+                transition-all duration-300 ease-in-out
+              ">
+                <span className="text-xl font-semibold text-text-secondary text-right leading-snug">
+                  {m.label}
+                </span>
+                <p className="text-[17px] text-text-muted leading-relaxed max-w-[75%]">
+                  {m.desc}
+                </p>
+              </div>
+
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Main Visual Storyboard */}
+      <article className="max-w-7xl mx-auto px-6 pb-24 flex flex-col gap-20">
+
+        {/* Section 1: The Challenge */}
+        <section className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+          <div className="lg:col-span-5 flex flex-col gap-6">
+            <span className="section-label">01. The Challenge & Offline-First Strategy</span>
+            <h2 className="text-3xl font-bold text-text-primary tracking-tight">Designing for Unstable Connectivity</h2>
+            <p className="text-sm text-text-secondary leading-relaxed">
+              School administrators in emerging markets frequently experienced server timeouts while entering end-of-term grades for thousands of students, causing catastrophic data loss and delays.
+            </p>
+
+            <ul className="flex flex-col gap-3 pt-2">
+              <li className="flex items-start gap-2 text-xs text-text-secondary">
+                <CheckCircle2 className="w-4 h-4 text-text-muted shrink-0 mt-0.5" />
+                <span><strong>Local Excel Editing:</strong> Offline data entry loop with automated column schema validation.</span>
               </li>
-              <li className="flex items-center justify-between">
-                <span>02. Accessibility</span>
-                <span className="text-[10px] text-text-muted">WCAG 2.1 AA Charts</span>
+              <li className="flex items-start gap-2 text-xs text-text-secondary">
+                <CheckCircle2 className="w-4 h-4 text-text-muted shrink-0 mt-0.5" />
+                <span><strong>Batch Sync Wizard:</strong> Single-click cloud synchronization once internet connection restores.</span>
               </li>
-              <li className="flex items-center justify-between">
-                <span>03. Figma Tokens</span>
-                <span className="text-[10px] text-text-muted">63% Efficiency Gain</span>
+              <li className="flex items-start gap-2 text-xs text-text-secondary">
+                <CheckCircle2 className="w-4 h-4 text-text-muted shrink-0 mt-0.5" />
+                <span><strong>Accessibility Standards:</strong> WCAG 2.1 AA compliant typography and high-contrast color scales.</span>
               </li>
             </ul>
           </div>
 
-          <div className="p-6 rounded-xl border border-border-muted bg-bg-secondary/20 flex flex-col gap-4">
-            <h4 className="font-geist font-bold text-text-primary text-xs uppercase tracking-wider">Related Work</h4>
-            <Link 
-              href="/projects/proptii" 
-              className="group flex flex-col gap-2 p-3 rounded-lg border border-border-muted hover:border-accent-blue transition-all"
-            >
-              <span className="text-xs font-bold text-text-primary group-hover:text-accent-blue transition-colors">Proptii Case Study</span>
-              <span className="text-[10px] text-text-muted">B2B PropTech Notification Engine</span>
-            </Link>
+          <div
+            className="lg:col-span-7 relative group aspect-[16/9] rounded-2xl overflow-hidden border border-border-muted bg-white fabrica-shadow cursor-pointer"
+            onClick={() => setActiveImage({ src: "/images/projects/myedufusion/slide_25.png", alt: "Offline Sync Architecture & UI" })}
+          >
+            <img
+              src="/images/projects/myedufusion/slide_25.png"
+              alt="Offline Sync Architecture"
+              className="w-full h-full object-contain bg-white group-hover:scale-[1.02] transition-transform duration-500"
+            />
+            <div className="absolute top-4 right-4 p-2 rounded-lg bg-black/60 backdrop-blur-md text-white opacity-0 group-hover:opacity-100 transition-opacity">
+              <ZoomIn className="w-4 h-4" />
+            </div>
           </div>
-        </aside>
+        </section>
+
+        {/* Section 2: Visual UI Storyboard Grid */}
+        <section className="flex flex-col gap-10">
+          <div>
+            <span className="section-label">02. High-Fidelity UI Gallery</span>
+            <h2 className="text-3xl font-bold text-text-primary tracking-tight mt-1">Design System & Key User Journeys</h2>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {storyboardSlides.map((slide, idx) => (
+              <div key={idx} className="glass-card rounded-2xl border border-border-muted overflow-hidden fabrica-shadow flex flex-col">
+                <div
+                  className="relative group aspect-[16/9] bg-bg-tertiary border-b border-border-muted cursor-pointer overflow-hidden"
+                  onClick={() => setActiveImage({ src: slide.image, alt: slide.title })}
+                >
+                  <img
+                    src={slide.image}
+                    alt={slide.title}
+                    className="w-full h-full object-contain bg-white group-hover:scale-[1.03] transition-transform duration-500"
+                  />
+                  <span className="absolute top-3 left-3 px-2.5 py-1 rounded-full bg-white/90 backdrop-blur-md text-[11px] font-semibold text-text-primary border border-black/10">
+                    {slide.tag}
+                  </span>
+                  <div className="absolute top-3 right-3 p-2 rounded-lg bg-black/60 backdrop-blur-md text-white opacity-0 group-hover:opacity-100 transition-opacity">
+                    <ZoomIn className="w-4 h-4" />
+                  </div>
+                </div>
+
+                <div className="p-6 flex flex-col gap-2 bg-bg-secondary flex-grow">
+                  <h3 className="text-lg font-bold text-text-primary">{slide.title}</h3>
+                  <p className="text-xs text-text-secondary leading-relaxed">{slide.desc}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
       </article>
+
+      {/* Lightbox Modal */}
+      {activeImage && (
+        <ImageLightbox
+          src={activeImage.src}
+          alt={activeImage.alt}
+          isOpen={!!activeImage}
+          onClose={() => setActiveImage(null)}
+        />
+      )}
     </div>
   );
 }

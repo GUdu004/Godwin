@@ -1,19 +1,18 @@
 import React from "react";
 import Link from "next/link";
-import { 
-  ArrowRight, 
-  Mail, 
-  Download, 
-  Sparkles, 
-  Smartphone, 
-  Database, 
-  Layers, 
-  Compass, 
+import {
+  ArrowRight,
+  Mail,
+  Download,
+  Database,
+  Layers,
+  Compass,
   Code,
-  ShieldCheck,
+  ExternalLink,
+  FileText,
   ChevronRight,
-  ExternalLink
 } from "lucide-react";
+import { ProjectCard } from "@/components/ProjectCard";
 
 const Linkedin = (props: React.SVGProps<SVGSVGElement>) => (
   <svg
@@ -36,338 +35,416 @@ export default function HomePage() {
     {
       id: "proptii",
       title: "Proptii",
-      subtitle: "B2B PropTech SaaS & Developer API Notification Platform",
-      description: "A unified digital ecosystem and communication pipeline designed to streamline customer experiences across property search, viewing, and referencing.",
-      tags: ["B2B SaaS", "CPaaS", "Design Systems", "API Webhooks"],
+      subtitle: "B2B PropTech SaaS & CPaaS Notification Architecture",
+      description:
+        "A unified digital ecosystem and communication pipeline designed to streamline customer experiences across property search, viewing, and referencing verification.",
+      tags: ["B2B SaaS", "CPaaS Architecture", "Design Systems", "API Webhooks"],
       metrics: [
         { label: "Processing Time", value: "85% Reduction" },
         { label: "Search-to-Viewing", value: "+34% Conversion" },
-        { label: "Landlords Onboarded", value: "150+" }
+        { label: "Landlords Onboarded", value: "150+" },
       ],
+      imageSrc: "/images/projects/proptii/slide_14.png",
       link: "/projects/proptii",
-      accent: "border-accent-blue/30 hover:border-accent-blue"
+      accentColor: "blue" as const,
+      year: "2024",
     },
     {
       id: "myedufusion",
       title: "MyEduFusion",
       subtitle: "Fault-Tolerant Enterprise SIS & Offline-First Design System",
-      description: "A comprehensive Student Information System (SIS) with offline-to-online data entry architecture to support schools with unstable internet.",
-      tags: ["Enterprise", "Offline-First", "Accessibility (A11y)", "Figma Tokens"],
+      description:
+        "A comprehensive Student Information System (SIS) featuring an offline-to-online data entry architecture to support schools operating with unstable connectivity.",
+      tags: ["Enterprise SaaS", "Offline-First Sync", "WCAG 2.1 AA", "Figma Tokens"],
       metrics: [
         { label: "Adopted Institutions", value: "70+" },
         { label: "Revenue Growth", value: "283% Acceleration" },
-        { label: "Active Students", value: "8,000+" }
+        { label: "Active Students", value: "8,000+" },
       ],
+      imageSrc: "/images/projects/myedufusion/slide_23.png",
       link: "/projects/myedufusion",
-      accent: "border-accent-green/30 hover:border-accent-green"
-    }
+      accentColor: "green" as const,
+      year: "2023",
+    },
+    {
+      id: "easyease",
+      title: "EasyEase",
+      subtitle: "Gamified STEM EdTech Platform & Interactive 3D Sandbox",
+      description:
+        "A learning platform combining storytelling, 3D visualization, and gamified reward loops to teach abstract STEM concepts to high schoolers.",
+      tags: ["EdTech SaaS", "Gamification", "3D Sandbox", "Information Architecture"],
+      metrics: [
+        { label: "Concept Retention", value: "+142%" },
+        { label: "Engagement Rate", value: "94%" },
+        { label: "Target Audience", value: "Grades 7-9" },
+      ],
+      imageSrc: "/images/projects/easyease/slide_12.png",
+      link: "/projects/easyease",
+      accentColor: "orange" as const,
+      year: "2023",
+    },
   ];
 
-  const skills = [
+  const capabilities = [
     {
-      category: "Product Strategy",
-      icon: <Compass className="w-5 h-5 text-accent-blue" />,
-      items: ["B2B SaaS Design", "Product-Led Growth (PLG)", "Enterprise Workflows", "Developer Experience (DevEx)", "Data-Informed Iterations"]
+      number: "01",
+      category: "Product Strategy & PLG",
+      icon: <Compass className="w-4 h-4" />,
+      items: [
+        "B2B SaaS Design",
+        "Product-Led Growth (PLG)",
+        "Enterprise Workflows",
+        "Developer Experience (DevEx)",
+        "Data-Informed Iterations",
+      ],
     },
     {
-      category: "Systems & Architecture",
-      icon: <Database className="w-5 h-5 text-accent-green" />,
-      items: ["Omnichannel Notification Engines", "Information Architecture", "Multi-State Logic Flows", "Offline-First Sync", "API Webhook Pipelines"]
+      number: "02",
+      category: "Systems & CPaaS Architecture",
+      icon: <Database className="w-4 h-4" />,
+      items: [
+        "Omnichannel Notification Engines",
+        "Information Architecture",
+        "Multi-State Logic Flows",
+        "Offline-First Data Sync",
+        "API Webhook Pipelines",
+      ],
     },
     {
-      category: "Design Systems",
-      icon: <Layers className="w-5 h-5 text-accent-orange" />,
-      items: ["Component Tokenization", "Figma Auto-Layout", "WCAG 2.1 AA Compliance", "Dark/Light Theme Variables", "Developer Handoff Redlines"]
+      number: "03",
+      category: "Design Systems & Accessibility",
+      icon: <Layers className="w-4 h-4" />,
+      items: [
+        "Component Tokenization",
+        "Figma Auto-Layout 5.0",
+        "WCAG 2.1 AA Compliance",
+        "Dark/Light Theme Variables",
+        "Developer Handoff Redlines",
+      ],
     },
     {
-      category: "Tools & Toolkit",
-      icon: <Code className="w-5 h-5 text-text-primary" />,
-      items: ["Figma Enterprise", "Miro / FigJam", "Notion / JIRA / Confluence", "Next.js / HTML5", "Tailwind CSS"]
-    }
+      number: "04",
+      category: "Tools & Engineering Toolkit",
+      icon: <Code className="w-4 h-4" />,
+      items: [
+        "Figma Enterprise",
+        "Miro / FigJam",
+        "Notion / JIRA / Confluence",
+        "Next.js / HTML5",
+        "Tailwind CSS",
+      ],
+    },
   ];
 
   return (
-    <main className="flex-grow flex flex-col min-h-screen">
-      {/* 1. HERO SECTION */}
-      <section className="relative overflow-hidden py-24 sm:py-32 border-b border-border-muted flex items-center justify-center min-h-[80vh]">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--color-bg-secondary),_transparent)] opacity-40 pointer-events-none" />
-        <div className="max-w-7xl mx-auto px-6 w-full flex flex-col items-start gap-8 z-10">
-          <div className="flex items-center gap-2 px-3 py-1 rounded-full border border-border-muted bg-bg-secondary text-xs font-mono text-text-primary">
-            <Sparkles className="w-3.5 h-3.5 text-accent-orange animate-pulse" />
-            <span>Available for Senior Product Designer Roles</span>
-          </div>
+    <div className="min-h-screen flex flex-col bg-bg-primary text-text-secondary">
+      <main className="flex-grow">
 
-          <div className="max-w-4xl flex flex-col gap-6">
-            <h1 className="font-geist text-5xl sm:text-7xl font-bold tracking-tight text-text-primary">
-              Godwin Udu
-            </h1>
-            <p className="font-geist text-2xl sm:text-3xl text-text-primary font-medium tracking-tight leading-tight">
-              Senior Product Designer — B2B SaaS, Platform Architecture &amp; Design Systems
-            </p>
-            <p className="text-base sm:text-lg text-text-secondary leading-relaxed max-w-2xl">
-              I design scalable enterprise SaaS platforms, developer-first API workflows, and robust design systems that bridge complex backend logic with intuitive, accessible user experiences.
-            </p>
-          </div>
+        {/* ═══════════════════════════════════════════════════
+            1. HERO SECTION
+        ════════════════════════════════════════════════════ */}
+        <section className="relative pt-20 pb-16 sm:pt-28 sm:pb-24 border-b border-white/10 overflow-hidden bg-bg-dark text-white">
+          <div className="max-w-7xl mx-auto px-6 flex flex-col items-start gap-10 z-10">
 
-          <div className="flex flex-wrap gap-4 pt-4">
-            <Link 
-              href="#projects" 
-              className="flex items-center gap-2 px-5 py-3 rounded-lg bg-text-primary text-bg-primary font-medium hover:bg-neutral-200 transition-colors"
-            >
-              <span>Explore Projects</span>
-              <ArrowRight className="w-4 h-4" />
-            </Link>
-            <a 
-              href="/GodwinUdu_Portfolio_ProductDesign.pdf" 
-              download 
-              className="flex items-center gap-2 px-5 py-3 rounded-lg bg-bg-secondary border border-border-muted text-text-primary font-medium hover:bg-neutral-950 hover:border-neutral-700 transition-all"
-            >
-              <Download className="w-4 h-4 text-accent-green" />
-              <span>Download ATS Portfolio PDF</span>
-            </a>
-          </div>
+            {/* Section label — Fabrica ⊕ style */}
+            <span className="section-label-dark">Product Designer</span>
 
-          <div className="flex items-center gap-6 pt-8 border-t border-border-muted w-full max-w-2xl text-xs font-mono text-text-muted">
-            <span>GET IN TOUCH:</span>
-            <a href="mailto:godwinudu01@gmail.com" className="hover:text-text-primary transition-colors flex items-center gap-1.5">
-              <Mail className="w-3.5 h-3.5" />
-              <span>godwinudu01@gmail.com</span>
-            </a>
-            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="hover:text-text-primary transition-colors flex items-center gap-1.5">
-              <Linkedin className="w-3.5 h-3.5" />
-              <span>LinkedIn</span>
-            </a>
-          </div>
-        </div>
-      </section>
+            {/* Display headline with Fabrica's grey-fade on second half */}
+            <div className="max-w-5xl flex flex-col gap-6">
+              <h1 className="text-5xl sm:text-7xl font-extrabold text-white tracking-tight leading-[1.05]">
+                Designing enterprise software,{" "}
+                <span className="text-white/40 font-extrabold">
+                  complex platform workflows &amp; developer tools.
+                </span>
+              </h1>
+              <p className="text-lg sm:text-xl text-white/70 leading-relaxed font-normal max-w-3xl">
+                I take multi-sided B2B SaaS platforms and developer-first workflows from discovery to
+                high-fidelity visual UI. Focused on systems where usability, API integration, and
+                accessibility directly drive user retention.
+              </p>
+            </div>
 
-      {/* 2. SKILLS MATRIX SECTION */}
-      <section id="about" className="py-24 border-b border-border-muted bg-bg-secondary/20">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="flex flex-col gap-4 mb-16 max-w-3xl">
-            <span className="font-mono text-xs text-accent-orange uppercase tracking-wider">Expertise &amp; Capabilities</span>
-            <h2 className="font-geist text-3xl sm:text-4xl font-bold text-text-primary">Skills Matrix</h2>
-            <p className="text-text-secondary leading-relaxed">
-              Curated capabilities built over 6+ years of designing complex B2B systems, developer pipelines, and high-adoption SaaS layouts.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {skills.map((skill, index) => (
-              <div 
-                key={index} 
-                className="flex flex-col gap-6 p-6 rounded-xl border border-border-muted bg-bg-secondary/40 hover:border-neutral-700 transition-all duration-300"
+            {/* Single inline CTA — Fabrica keeps CTAs minimal */}
+            <div className="flex flex-wrap items-center gap-6 pt-2">
+              <a
+                href="#work"
+                className="inline-flex items-center gap-2 text-white font-semibold text-sm hover:gap-3 transition-all group"
               >
-                <div className="flex items-center gap-3">
-                  <div className="p-2 rounded-lg bg-bg-secondary border border-border-muted">
-                    {skill.icon}
-                  </div>
-                  <h3 className="font-geist font-bold text-text-primary text-sm tracking-tight">{skill.category}</h3>
-                </div>
-                <ul className="flex flex-col gap-3">
-                  {skill.items.map((item, i) => (
-                    <li key={i} className="text-xs text-text-secondary flex items-start gap-2">
-                      <span className="text-accent-green mt-0.5">•</span>
-                      <span>{item}</span>
-                    </li>
-                  ))}
-                </ul>
+                <span>View Work</span>
+                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+              </a>
+              <span className="text-white/20 text-xs select-none">—</span>
+              <Link
+                href="/resume"
+                className="inline-flex items-center gap-2 text-white/50 font-medium text-sm hover:text-white transition-colors"
+              >
+                <FileText className="w-3.5 h-3.5" />
+                ATS Resume
+              </Link>
+            </div>
+          </div>
+        </section>
+
+        {/* ═══════════════════════════════════════════════════
+            2. FEATURED WORK — Asymmetric grid
+        ════════════════════════════════════════════════════ */}
+        <section id="work" className="py-20 sm:py-28 border-b border-border-muted">
+          <div className="max-w-7xl mx-auto px-6 flex flex-col gap-14">
+
+            {/* Section header */}
+            <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
+              <div>
+                <span className="section-label">Case Studies</span>
+                <h2 className="text-3xl sm:text-4xl font-extrabold text-text-primary tracking-tight mt-2">
+                  Featured Product Work.
+                </h2>
               </div>
-            ))}
-          </div>
-        </div>
-      </section>
+              <p className="text-sm text-text-muted max-w-xs">
+                Visual storyboards and high-fidelity mockups from design specifications.
+              </p>
+            </div>
 
-      {/* 3. PROJECTS GRID SECTION */}
-      <section id="projects" className="py-24 border-b border-border-muted">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="flex flex-col gap-4 mb-16 max-w-3xl">
-            <span className="font-mono text-xs text-accent-blue uppercase tracking-wider">Selected Case Studies</span>
-            <h2 className="font-geist text-3xl sm:text-4xl font-bold text-text-primary">Recent Work</h2>
-            <p className="text-text-secondary leading-relaxed">
-              Deep dives into complex architectural design challenges, demonstrating end-to-end UX process, system resilience, and business impact.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-            {projects.map((project) => (
-              <div 
-                key={project.id}
-                className={`flex flex-col justify-between p-8 rounded-2xl border bg-bg-secondary/30 transition-all duration-300 ${project.accent}`}
-              >
-                <div className="flex flex-col gap-6">
-                  {/* Header */}
-                  <div className="flex items-start justify-between">
-                    <div>
-                      <h3 className="font-geist text-2xl font-bold text-text-primary mb-1">{project.title}</h3>
-                      <p className="text-xs font-mono text-text-muted">{project.subtitle}</p>
+            {/* Asymmetric grid: 2x2 layout showcasing projects and offline deck */}
+            <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 lg:gap-10 items-start">
+              {/* Card 1 — Proptii */}
+              <div className="lg:col-span-3">
+                <ProjectCard {...projects[0]} />
+              </div>
+              {/* Card 2 — MyEduFusion */}
+              <div className="lg:col-span-2">
+                <ProjectCard {...projects[1]} />
+              </div>
+              {/* Card 3 — EasyEase */}
+              <div className="lg:col-span-3">
+                <ProjectCard {...projects[2]} />
+              </div>
+              {/* Card 4 — PDF Download (to balance the grid beautifully) */}
+              <div className="lg:col-span-2">
+                <div className="group flex flex-col gap-0 h-full">
+                  {/* Visual block */}
+                  <a
+                    href="/GodwinUdu_Portfolio_ProductDesign.pdf"
+                    target="_blank"
+                    className="fabrica-card relative aspect-[16/9] w-full overflow-hidden bg-bg-secondary border border-border-muted flex items-center justify-center cursor-pointer group-hover:border-border-active transition-all"
+                  >
+                    <div className="absolute inset-0 bg-gradient-to-br from-bg-tertiary via-bg-secondary to-bg-primary opacity-60" />
+                    <div className="z-10 flex flex-col items-center gap-3 text-text-muted group-hover:text-text-primary transition-colors">
+                      <Download className="w-8 h-8 group-hover:scale-110 transition-transform duration-300" />
+                      <span className="text-[10px] font-mono tracking-widest uppercase">76MB PDF Deck</span>
                     </div>
-                    <ChevronRight className="w-5 h-5 text-text-muted" />
-                  </div>
+                    {/* Scrim */}
+                    <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-400" />
+                  </a>
 
-                  {/* Description */}
-                  <p className="text-sm text-text-secondary leading-relaxed">
-                    {project.description}
-                  </p>
+                  {/* Metadata */}
+                  <div className="flex items-start justify-between pt-4 px-1">
+                    <div className="flex flex-col gap-1">
+                      <div className="flex items-baseline gap-3">
+                        <span className="text-base font-bold text-text-primary tracking-tight">Full Portfolio.</span>
+                        <span className="text-sm text-text-muted font-normal">/PDF</span>
+                      </div>
+                      <p className="text-xs text-text-secondary leading-relaxed max-w-sm">
+                        Consolidated design archives and high-resolution wireframe flows.
+                      </p>
+                    </div>
+
+                    <a
+                      href="/GodwinUdu_Portfolio_ProductDesign.pdf"
+                      target="_blank"
+                      className="mt-0.5 p-2 rounded-full bg-bg-tertiary text-text-primary hover:bg-text-primary hover:text-bg-secondary transition-all duration-200 shadow-sm flex-shrink-0"
+                      title="Download Portfolio PDF"
+                    >
+                      <ArrowRight className="w-4 h-4" />
+                    </a>
+                  </div>
 
                   {/* Tags */}
-                  <div className="flex flex-wrap gap-2">
-                    {project.tags.map((tag) => (
-                      <span 
-                        key={tag} 
-                        className="px-2.5 py-1 rounded-md border border-border-muted bg-bg-secondary/60 text-[10px] font-mono text-text-primary"
-                      >
-                        {tag}
-                      </span>
-                    ))}
+                  <div className="flex flex-wrap gap-1.5 mt-2.5 px-1">
+                    <span className="px-2.5 py-0.5 rounded-full bg-bg-tertiary border border-border-muted text-[10px] font-medium text-text-muted">
+                      PDF Document
+                    </span>
+                    <span className="px-2.5 py-0.5 rounded-full bg-bg-tertiary border border-border-muted text-[10px] font-medium text-text-muted">
+                      Offline Deck
+                    </span>
                   </div>
 
-                  {/* Divider */}
-                  <div className="h-[1px] bg-border-muted my-2" />
-
-                  {/* Key Metrics */}
-                  <div>
-                    <h4 className="text-[10px] font-mono text-text-muted uppercase tracking-wider mb-3">Key Project Outcomes:</h4>
-                    <div className="grid grid-cols-3 gap-2">
-                      {project.metrics.map((metric) => (
-                        <div key={metric.label} className="p-3 rounded-lg bg-bg-secondary border border-border-muted flex flex-col gap-1">
-                          <span className="text-xs text-text-muted leading-none">{metric.label}</span>
-                          <span className="text-sm sm:text-base font-bold text-accent-green leading-tight">{metric.value}</span>
-                        </div>
-                      ))}
+                  {/* Metric strip */}
+                  <div className="flex flex-wrap gap-4 mt-3 px-1 pt-3 border-t border-border-muted">
+                    <div className="flex flex-col gap-0.5">
+                      <span className="text-[10px] font-mono uppercase tracking-wider text-text-muted">Total Pages</span>
+                      <span className="text-sm font-bold text-text-primary">30 Slides</span>
+                    </div>
+                    <div className="flex flex-col gap-0.5">
+                      <span className="text-[10px] font-mono uppercase tracking-wider text-text-muted">File Size</span>
+                      <span className="text-sm font-bold text-text-primary">76.3 MB</span>
                     </div>
                   </div>
                 </div>
-
-                <div className="pt-8">
-                  <Link 
-                    href={project.link}
-                    className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-bg-secondary border border-border-muted text-xs font-medium text-text-primary hover:bg-neutral-950 hover:border-neutral-700 transition-all"
-                  >
-                    <span>Read Case Study</span>
-                    <ArrowRight className="w-3.5 h-3.5" />
-                  </Link>
-                </div>
               </div>
-            ))}
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* 4. DESIGN SYSTEMS & ACCESSIBILITY SECTION */}
-      <section id="design-systems" className="py-24 border-b border-border-muted bg-bg-secondary/10">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div className="flex flex-col gap-6">
-              <span className="font-mono text-xs text-accent-orange uppercase tracking-wider">Design Operations &amp; Standards</span>
-              <h2 className="font-geist text-3xl sm:text-4xl font-bold text-text-primary leading-tight">
-                Design System Governance &amp; Accessibility (A11y)
-              </h2>
-              <p className="text-text-secondary leading-relaxed">
-                Consistency, tokenization, and accessibility are central to my product design workflow. Rather than designing static components, I construct scalable UI libraries mapped to engineering design tokens.
-              </p>
-              
+        {/* ═══════════════════════════════════════════════════
+            3. CAPABILITIES — Dark full-bleed panel (Fabrica Services)
+        ════════════════════════════════════════════════════ */}
+        <section id="skills" className="py-20 sm:py-28 border-b border-border-muted">
+          <div className="max-w-7xl mx-auto px-6">
+            <div className="dark-panel px-8 sm:px-12 py-14 sm:py-20 flex flex-col gap-14">
+
+              {/* Panel header */}
               <div className="flex flex-col gap-4">
-                <div className="flex items-start gap-4">
-                  <div className="p-2 rounded-lg bg-bg-secondary border border-border-muted text-accent-green">
-                    <ShieldCheck className="w-5 h-5" />
-                  </div>
-                  <div>
-                    <h4 className="font-geist font-bold text-text-primary text-sm mb-1">WCAG 2.1 AA Compliance</h4>
-                    <p className="text-xs text-text-secondary">
-                      Ensuring high contrast, descriptive screen-reader elements, focus states, and accessible keyboard navigation in all interactive wizards.
-                    </p>
-                  </div>
+                <span className="inline-flex flex-col items-start gap-2 text-[11px] font-semibold uppercase tracking-widest text-white/40">
+                  <span className="w-5 h-5 rounded-full bg-white/40 flex-shrink-0 inline-flex items-center justify-center relative">
+                    <span className="absolute w-2.5 h-[2px] bg-bg-dark"></span>
+                    <span className="absolute h-2.5 w-[2px] bg-bg-dark"></span>
+                  </span>
+                  What I Bring
+                </span>
+                <div className="flex items-end gap-4">
+                  <h2 className="text-5xl sm:text-7xl font-extrabold text-white tracking-tight leading-none">
+                    Capabilities.
+                  </h2>
+                  <span className="text-3xl sm:text-5xl font-light text-white/30 pb-1">({capabilities.length})</span>
                 </div>
+                <p className="text-white/50 text-sm max-w-md">
+                  A systems-first approach combining product strategy, interaction design, and engineering fluency.
+                </p>
+              </div>
 
-                <div className="flex items-start gap-4">
-                  <div className="p-2 rounded-lg bg-bg-secondary border border-border-muted text-accent-blue">
-                    <Layers className="w-5 h-5" />
+              {/* Accordion-style rows */}
+              <div className="flex flex-col divide-y divide-white/10">
+                {capabilities.map((cap, idx) => (
+                  <div key={idx} className="flex flex-col sm:flex-row sm:items-start gap-4 py-6">
+                    <span className="text-xs font-mono text-white/30 w-8 pt-0.5 flex-shrink-0">{cap.number}</span>
+                    <div className="flex-1 flex flex-col gap-3">
+                      <h3 className="text-lg font-bold text-white">{cap.category}</h3>
+                      <div className="flex flex-wrap gap-x-6 gap-y-1">
+                        {cap.items.map((item, i) => (
+                          <span key={i} className="text-xs text-white/50 font-medium">
+                            {item}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                    <ChevronRight className="w-4 h-4 text-white/20 hidden sm:block mt-1 flex-shrink-0" />
                   </div>
-                  <div>
-                    <h4 className="font-geist font-bold text-text-primary text-sm mb-1">Figma Token Architecture</h4>
-                    <p className="text-xs text-text-secondary">
-                      Standardizing components using nested variables for spacing, color tokens, dark/light theme overrides, and automated developer spec handoffs.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div className="p-8 rounded-2xl border border-border-muted bg-bg-secondary/40 flex flex-col gap-6 font-mono text-xs">
-              <div className="flex items-center justify-between border-b border-border-muted pb-4">
-                <span className="text-text-primary font-bold">Nectary Integration: Design Tokens</span>
-                <span className="text-[10px] text-text-muted">figma-tokens.json</span>
-              </div>
-              <div className="flex flex-col gap-4 text-text-muted">
-                <div>
-                  <span className="text-accent-blue">"colors":</span> &#123;
-                  <div className="pl-4">
-                    <span className="text-accent-green">"brand":</span> &#123; <span className="text-text-secondary">"value": "#10B981"</span> &#125;,
-                    <br />
-                    <span className="text-accent-green">"surface-primary":</span> &#123; <span className="text-text-secondary">"value": "#0A0A0A"</span> &#125;,
-                    <br />
-                    <span className="text-accent-green">"border-muted":</span> &#123; <span className="text-text-secondary">"value": "#262626"</span> &#125;
-                  </div>
-                  &#125;,
-                </div>
-                <div>
-                  <span className="text-accent-blue">"spacing":</span> &#123;
-                  <div className="pl-4">
-                    <span className="text-accent-green">"xs":</span> &#123; <span className="text-text-secondary">"value": "4px"</span> &#125;,
-                    <br />
-                    <span className="text-accent-green">"md":</span> &#123; <span className="text-text-secondary">"value": "16px"</span> &#125;,
-                    <br />
-                    <span className="text-accent-green">"xl":</span> &#123; <span className="text-text-secondary">"value": "32px"</span> &#125;
-                  </div>
-                  &#125;
-                </div>
-              </div>
-              <div className="border-t border-border-muted pt-4 flex items-center justify-between text-[10px] text-text-muted">
-                <span>Theme: Dark Mode Config</span>
-                <span className="text-accent-green">// Token-mapped React values</span>
+                ))}
               </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* 5. FOOTER & CONTACT */}
-      <footer className="border-t border-border-muted bg-bg-primary py-12 no-print">
-        <div className="max-w-7xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-6">
-          <div className="flex flex-col gap-2 items-center sm:items-start">
-            <span className="font-geist font-bold text-lg text-text-primary">Godwin Udu</span>
-            <span className="text-xs text-text-muted">© {new Date().getFullYear()} All rights reserved.</span>
+        {/* ═══════════════════════════════════════════════════
+            4. ABOUT & CONTACT
+        ════════════════════════════════════════════════════ */}
+        <section id="about" className="py-20 sm:py-28 border-b border-border-muted">
+          <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+
+            {/* Left — bio */}
+            <div className="lg:col-span-7 flex flex-col gap-8">
+              <div>
+                <span className="section-label">About Godwin</span>
+                <h2 className="text-3xl sm:text-4xl font-extrabold text-text-primary tracking-tight mt-2">
+                  Senior Product Designer with a{" "}
+                  <span className="text-text-muted">passion for scalable software.</span>
+                </h2>
+              </div>
+              <p className="text-base text-text-secondary leading-relaxed">
+                With years of experience taking multi-tenant SaaS systems, property technology
+                platforms, and educational management tools from discovery to live deployment, I
+                specialise in simplifying complex user journeys and bridging the gap between product
+                design and engineering execution.
+              </p>
+
+              {/* Stat chips */}
+              <div className="grid grid-cols-3 gap-4">
+                {[
+                  { value: "85%", label: "Workflow Time Saved" },
+                  { value: "70+",  label: "Enterprise Clients" },
+                  { value: "WCAG 2.1", label: "AA Compliant" },
+                ].map((s, idx) => (
+                  <div
+                    key={idx}
+                    className="p-4 rounded-2xl bg-bg-secondary border border-border-muted flex flex-col gap-1"
+                  >
+                    <div className="text-2xl font-extrabold text-text-primary">{s.value}</div>
+                    <div className="text-[11px] text-text-muted">{s.label}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Right — contact card */}
+            <div className="lg:col-span-5 flex flex-col gap-5 p-8 rounded-2xl border border-border-muted bg-bg-secondary">
+              <div>
+                <h3 className="text-xl font-bold text-text-primary">Get In Touch</h3>
+                <p className="text-sm text-text-secondary mt-2 leading-relaxed">
+                  Currently discussing Senior Product Designer roles. Feel free to reach out.
+                </p>
+              </div>
+              <div className="flex flex-col gap-3">
+                <a
+                  href="mailto:contact@godwinudu.com"
+                  className="flex items-center gap-3 p-3.5 rounded-xl border border-border-muted text-text-primary font-medium text-sm hover:border-border-active hover:bg-bg-tertiary transition-all"
+                >
+                  <Mail className="w-4 h-4" />
+                  Email Godwin
+                </a>
+                <a
+                  href="https://linkedin.com/in/godwinudu"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-3 p-3.5 rounded-xl bg-text-primary text-bg-primary font-medium text-sm hover:bg-black/80 transition-all"
+                >
+                  <Linkedin className="w-4 h-4 fill-current" />
+                  Connect on LinkedIn
+                  <ExternalLink className="w-3.5 h-3.5 ml-auto" />
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      {/* ═══════════════════════════════════════════════════
+          FOOTER — Fabrica logotype footer
+      ════════════════════════════════════════════════════ */}
+      <footer className="bg-bg-primary pt-8 pb-6">
+        <div className="max-w-7xl mx-auto px-6 flex flex-col gap-0">
+
+          {/* Nav links row */}
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 border-b border-border-muted text-xs text-text-muted">
+            <div className="flex items-center gap-6">
+              <Link href="/#work" className="hover:text-text-primary transition-colors">Work</Link>
+              <Link href="/#skills" className="hover:text-text-primary transition-colors">Skills</Link>
+              <Link href="/#about" className="hover:text-text-primary transition-colors">About</Link>
+              <Link href="/resume" className="hover:text-text-primary transition-colors">Resume</Link>
+            </div>
+            <a
+              href="/GodwinUdu_Portfolio_ProductDesign.pdf"
+              target="_blank"
+              className="inline-flex items-center gap-1.5 hover:text-text-primary transition-colors"
+            >
+              <Download className="w-3 h-3" />
+              Portfolio PDF
+            </a>
           </div>
 
-          <div className="flex items-center gap-6">
-            <a 
-              href="mailto:godwinudu01@gmail.com" 
-              className="text-xs text-text-secondary hover:text-text-primary transition-colors flex items-center gap-1"
-            >
-              <Mail className="w-3.5 h-3.5" />
-              <span>Email</span>
-            </a>
-            <a 
-              href="https://linkedin.com" 
-              target="_blank" 
-              rel="noopener noreferrer" 
-              className="text-xs text-text-secondary hover:text-text-primary transition-colors flex items-center gap-1"
-            >
-              <Linkedin className="w-3.5 h-3.5" />
-              <span>LinkedIn</span>
-            </a>
-            <a 
-              href="/GodwinUdu_Portfolio_ProductDesign.pdf" 
-              download 
-              className="text-xs text-text-secondary hover:text-text-primary transition-colors flex items-center gap-1"
-            >
-              <Download className="w-3.5 h-3.5 text-accent-green" />
-              <span>PDF Portfolio</span>
-            </a>
+          {/* Large logotype — Fabrica "fabrica® Studio" style */}
+          <div className="py-6 flex flex-col sm:flex-row sm:items-end justify-between gap-2">
+            <span className="text-5xl sm:text-7xl lg:text-8xl font-extrabold text-text-primary tracking-tight leading-none select-none">
+              Godwin Udu<span className="font-light text-text-muted">®</span>
+            </span>
+            <span className="text-sm text-text-muted self-end pb-1">Studio</span>
+          </div>
+
+          {/* Copyright line */}
+          <div className="pt-4 border-t border-border-muted text-[11px] text-text-muted">
+            © {new Date().getFullYear()} Godwin Udu. All rights reserved.
           </div>
         </div>
       </footer>
-    </main>
+    </div>
   );
 }

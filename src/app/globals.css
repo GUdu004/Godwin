@@ -1,61 +1,169 @@
 @import "tailwindcss";
 
 :root {
-  --background: #0A0A0A;
-  --foreground: #A3A3A3;
+  --background: #EBEBEB;
+  --foreground: #111111;
 }
 
 @theme {
-  --color-bg-primary: #0A0A0A;
-  --color-bg-secondary: #121212;
-  --color-bg-tertiary: #1A1A1A;
-  --color-border-muted: #262626;
-  --color-border-active: #404040;
-  
-  --color-text-primary: #FFFFFF;
-  --color-text-secondary: #A3A3A3;
-  --color-text-muted: #525252;
-  
-  --color-accent-green: #10B981;
-  --color-accent-blue: #3B82F6;
-  --color-accent-orange: #F59E0B;
-  
+  /* Canvas & Surfaces */
+  --color-bg-primary:   #EBEBEB;   /* Fabrica warm grey canvas */
+  --color-bg-secondary: #F5F5F5;   /* slightly lighter panel bg */
+  --color-bg-tertiary:  #E0E0E0;   /* deeper inset / hover state */
+  --color-bg-dark:      #111111;   /* full-bleed dark sections */
+
+  /* Borders */
+  --color-border-muted:  rgba(0, 0, 0, 0.08);
+  --color-border-active: rgba(0, 0, 0, 0.30);
+
+  /* Text */
+  --color-text-primary:   #111111;
+  --color-text-secondary: #444444;
+  --color-text-muted:     #888888;
+  --color-text-on-dark:   #FFFFFF;
+
+  /* Primary monochrome action colour */
+  --color-accent-primary: #111111;
+
+  /* Semantic case-study accents (kept for project identity) */
+  --color-accent-green:  #16A34A;
+  --color-accent-blue:   #2563EB;
+  --color-accent-orange: #EA580C;
+  --color-accent-dark:   #111111;
+
+  /* Typography */
   --font-geist: var(--font-geist-sans), sans-serif;
   --font-inter: var(--font-inter), sans-serif;
 }
 
-/* Custom scrollbar and global resets */
-::-webkit-scrollbar {
-  width: 6px;
-  height: 6px;
-}
-::-webkit-scrollbar-track {
-  background: var(--bg-primary);
-}
-::-webkit-scrollbar-thumb {
-  background: #262626;
-  border-radius: 3px;
-}
-::-webkit-scrollbar-thumb:hover {
-  background: #404040;
-}
+/* ─── Scrollbar ──────────────────────────────────────── */
+::-webkit-scrollbar        { width: 5px; height: 5px; }
+::-webkit-scrollbar-track  { background: var(--color-bg-primary); }
+::-webkit-scrollbar-thumb  { background: #BBBBBB; border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: #999999; }
 
+/* ─── Base ───────────────────────────────────────────── */
 body {
   background-color: var(--color-bg-primary);
   color: var(--color-text-secondary);
   font-family: var(--font-inter);
+  -webkit-font-smoothing: antialiased;
 }
 
-/* Print styles for ATS resume layout */
+/* ─── Navbar glass (warm, not cold) ─────────────────── */
+.glass-header {
+  background: rgba(235, 235, 235, 0.90);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+/* ─── Card styles ────────────────────────────────────── */
+.glass-card {
+  background: rgba(245, 245, 245, 0.95);
+  border: 1px solid rgba(0, 0, 0, 0.07);
+  box-shadow: 0 2px 12px -2px rgba(0, 0, 0, 0.06);
+}
+
+/* Fabrica-style card: clean rounded rect on warm grey */
+.fabrica-card {
+  background: #F5F5F5;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 20px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.fabrica-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 40px -8px rgba(0, 0, 0, 0.14);
+}
+
+/* Subtle drop shadow used throughout */
+.fabrica-shadow {
+  box-shadow: 0 2px 16px -4px rgba(0, 0, 0, 0.07), 0 1px 4px -2px rgba(0, 0, 0, 0.04);
+}
+
+/* ─── Section label (Fabrica ⊕ prefix style) ─────────── */
+.section-label {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 16.5px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+}
+.section-label::before {
+  content: "";
+  display: inline-block;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background-color: var(--color-text-primary);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='4.5' stroke-linecap='round'%3E%3Cline x1='12' y1='6' x2='12' y2='18'/%3E%3Cline x1='6' y1='12' x2='18' y2='12'/%3E%3C/svg%3E");
+  background-size: 55%;
+  background-position: center;
+  background-repeat: no-repeat;
+  flex-shrink: 0;
+}
+.section-label-dark {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 16.5px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.5);
+}
+.section-label-dark::before {
+  content: "";
+  display: inline-block;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.4);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23111111' stroke-width='4.5' stroke-linecap='round'%3E%3Cline x1='12' y1='6' x2='12' y2='18'/%3E%3Cline x1='6' y1='12' x2='18' y2='12'/%3E%3C/svg%3E");
+  background-size: 55%;
+  background-position: center;
+  background-repeat: no-repeat;
+  flex-shrink: 0;
+}
+
+/* ─── Dark full-bleed section ────────────────────────── */
+.dark-panel {
+  background-color: var(--color-bg-dark);
+  color: var(--color-text-on-dark);
+  border-radius: 24px;
+}
+
+/* ─── Hamburger nav drawer ───────────────────────────── */
+.nav-drawer {
+  position: fixed;
+  inset: 0;
+  z-index: 40;
+  display: flex;
+  flex-direction: column;
+  background: #EBEBEB;
+  padding: 0;
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+.nav-drawer.closed {
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-12px);
+}
+.nav-drawer.open {
+  opacity: 1;
+  pointer-events: all;
+  transform: translateY(0);
+}
+
+/* ─── Print ──────────────────────────────────────────── */
 @media print {
-  body {
-    background: #ffffff !important;
-    color: #000000 !important;
-  }
-  .no-print {
-    display: none !important;
-  }
-  .print-only {
-    display: block !important;
-  }
+  body { background: #ffffff !important; color: #000000 !important; }
+  .no-print  { display: none !important; }
+  .print-only { display: block !important; }
 }
