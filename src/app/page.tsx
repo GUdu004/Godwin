@@ -3,13 +3,11 @@ import Link from "next/link";
 import {
   ArrowRight,
   Mail,
-  Download,
   Database,
   Layers,
   Compass,
   Code,
   ExternalLink,
-  FileText,
   ChevronRight,
 } from "lucide-react";
 import { ProjectCard } from "@/components/ProjectCard";
@@ -44,7 +42,7 @@ export default function HomePage() {
         { label: "Search-to-Viewing", value: "+34% Conversion" },
         { label: "Landlords Onboarded", value: "150+" },
       ],
-      imageSrc: "/images/projects/proptii/slide_14.png",
+      imageSrc: "/images/projects/proptii/slide_02.png",
       link: "/projects/proptii",
       accentColor: "blue" as const,
       year: "2024",
@@ -176,14 +174,6 @@ export default function HomePage() {
                 <span>View Work</span>
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </a>
-              <span className="text-white/20 text-xs select-none">—</span>
-              <Link
-                href="/resume"
-                className="inline-flex items-center gap-2 text-white/50 font-medium text-sm hover:text-white transition-colors"
-              >
-                <FileText className="w-3.5 h-3.5" />
-                ATS Resume
-              </Link>
             </div>
           </div>
         </section>
@@ -207,7 +197,7 @@ export default function HomePage() {
               </p>
             </div>
 
-            {/* Asymmetric grid: 2x2 layout showcasing projects and offline deck */}
+            {/* Grid layout showcasing 3 featured projects */}
             <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 lg:gap-10 items-start">
               {/* Card 1 — Proptii */}
               <div className="lg:col-span-3">
@@ -218,71 +208,8 @@ export default function HomePage() {
                 <ProjectCard {...projects[1]} />
               </div>
               {/* Card 3 — EasyEase */}
-              <div className="lg:col-span-3">
+              <div className="lg:col-span-5">
                 <ProjectCard {...projects[2]} />
-              </div>
-              {/* Card 4 — PDF Download (to balance the grid beautifully) */}
-              <div className="lg:col-span-2">
-                <div className="group flex flex-col gap-0 h-full">
-                  {/* Visual block */}
-                  <a
-                    href="/GodwinUdu_Portfolio_ProductDesign.pdf"
-                    target="_blank"
-                    className="fabrica-card relative aspect-[16/9] w-full overflow-hidden bg-bg-secondary border border-border-muted flex items-center justify-center cursor-pointer group-hover:border-border-active transition-all"
-                  >
-                    <div className="absolute inset-0 bg-gradient-to-br from-bg-tertiary via-bg-secondary to-bg-primary opacity-60" />
-                    <div className="z-10 flex flex-col items-center gap-3 text-text-muted group-hover:text-text-primary transition-colors">
-                      <Download className="w-8 h-8 group-hover:scale-110 transition-transform duration-300" />
-                      <span className="text-[10px] font-mono tracking-widest uppercase">76MB PDF Deck</span>
-                    </div>
-                    {/* Scrim */}
-                    <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-400" />
-                  </a>
-
-                  {/* Metadata */}
-                  <div className="flex items-start justify-between pt-4 px-1">
-                    <div className="flex flex-col gap-1">
-                      <div className="flex items-baseline gap-3">
-                        <span className="text-base font-bold text-text-primary tracking-tight">Full Portfolio.</span>
-                        <span className="text-sm text-text-muted font-normal">/PDF</span>
-                      </div>
-                      <p className="text-xs text-text-secondary leading-relaxed max-w-sm">
-                        Consolidated design archives and high-resolution wireframe flows.
-                      </p>
-                    </div>
-
-                    <a
-                      href="/GodwinUdu_Portfolio_ProductDesign.pdf"
-                      target="_blank"
-                      className="mt-0.5 p-2 rounded-full bg-bg-tertiary text-text-primary hover:bg-text-primary hover:text-bg-secondary transition-all duration-200 shadow-sm flex-shrink-0"
-                      title="Download Portfolio PDF"
-                    >
-                      <ArrowRight className="w-4 h-4" />
-                    </a>
-                  </div>
-
-                  {/* Tags */}
-                  <div className="flex flex-wrap gap-1.5 mt-2.5 px-1">
-                    <span className="px-2.5 py-0.5 rounded-full bg-bg-tertiary border border-border-muted text-[10px] font-medium text-text-muted">
-                      PDF Document
-                    </span>
-                    <span className="px-2.5 py-0.5 rounded-full bg-bg-tertiary border border-border-muted text-[10px] font-medium text-text-muted">
-                      Offline Deck
-                    </span>
-                  </div>
-
-                  {/* Metric strip */}
-                  <div className="flex flex-wrap gap-4 mt-3 px-1 pt-3 border-t border-border-muted">
-                    <div className="flex flex-col gap-0.5">
-                      <span className="text-[10px] font-mono uppercase tracking-wider text-text-muted">Total Pages</span>
-                      <span className="text-sm font-bold text-text-primary">30 Slides</span>
-                    </div>
-                    <div className="flex flex-col gap-0.5">
-                      <span className="text-[10px] font-mono uppercase tracking-wider text-text-muted">File Size</span>
-                      <span className="text-sm font-bold text-text-primary">76.3 MB</span>
-                    </div>
-                  </div>
-                </div>
               </div>
             </div>
           </div>
@@ -391,14 +318,14 @@ export default function HomePage() {
               </div>
               <div className="flex flex-col gap-3">
                 <a
-                  href="mailto:contact@godwinudu.com"
+                  href="mailto:godwinudu01@gmail.com"
                   className="flex items-center gap-3 p-3.5 rounded-xl border border-border-muted text-text-primary font-medium text-sm hover:border-border-active hover:bg-bg-tertiary transition-all"
                 >
                   <Mail className="w-4 h-4" />
                   Email Godwin
                 </a>
                 <a
-                  href="https://linkedin.com/in/godwinudu"
+                  href="https://www.linkedin.com/in/godwin-udu/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-3 p-3.5 rounded-xl bg-text-primary text-bg-primary font-medium text-sm hover:bg-black/80 transition-all"
@@ -425,16 +352,7 @@ export default function HomePage() {
               <Link href="/#work" className="hover:text-text-primary transition-colors">Work</Link>
               <Link href="/#skills" className="hover:text-text-primary transition-colors">Skills</Link>
               <Link href="/#about" className="hover:text-text-primary transition-colors">About</Link>
-              <Link href="/resume" className="hover:text-text-primary transition-colors">Resume</Link>
             </div>
-            <a
-              href="/GodwinUdu_Portfolio_ProductDesign.pdf"
-              target="_blank"
-              className="inline-flex items-center gap-1.5 hover:text-text-primary transition-colors"
-            >
-              <Download className="w-3 h-3" />
-              Portfolio PDF
-            </a>
           </div>
 
           {/* Large logotype — Fabrica "fabrica® Studio" style */}

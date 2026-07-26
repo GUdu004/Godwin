@@ -38,7 +38,7 @@ export default function ProptiiCaseStudy() {
     {
       title: "1. B2B Property Search & Direct Viewing Booking",
       desc: "Un-gated search interface allowing prospective tenants to filter property attributes and schedule instant viewings without early paywalls.",
-      image: "/images/projects/proptii/slide_04.png",
+      image: "/images/projects/proptii/Slide_01a.png",
       tag: "PLG & Search UX"
     },
     {
@@ -48,15 +48,15 @@ export default function ProptiiCaseStudy() {
       tag: "Scheduling UX"
     },
     {
-      title: "3. Omnichannel CPaaS API & Webhook Architecture",
-      desc: "Event-driven notification pipeline delivering automated SMS, Email, and WhatsApp verification triggers with fallback retry logic.",
-      image: "/images/projects/proptii/slide_17.png",
-      tag: "CPaaS & API System"
+      title: "3. Property Manager Dashboard & Portfolio Metrics",
+      desc: "Centralized management dashboard providing property managers with real-time portfolio metrics, active lead tracking, and viewing request updates.",
+      image: "/images/projects/proptii/slide_16.png",
+      tag: "Dashboard Design"
     },
     {
       title: "4. Streamlined Tenant Referencing & Identity Verification",
       desc: "Multi-step verification wizard replacing paper forms with automated ID checks, credit checks, and landlord background validation.",
-      image: "/images/projects/proptii/slide_07.png",
+      image: "/images/projects/proptii/slide_06.png",
       tag: "Identity & Verification"
     },
     {
@@ -116,10 +116,10 @@ export default function ProptiiCaseStudy() {
       <section className="max-w-7xl mx-auto px-6 mb-16">
         <div 
           className="fabrica-card relative group aspect-[16/9] w-full cursor-pointer"
-          onClick={() => setActiveImage({ src: "/images/projects/proptii/slide_14.png", alt: "Proptii High-Fidelity UI Design" })}
+          onClick={() => setActiveImage({ src: "/images/projects/proptii/slide_02.png", alt: "Proptii High-Fidelity UI Design" })}
         >
           <img
-            src="/images/projects/proptii/slide_14.png"
+            src="/images/projects/proptii/slide_02.png"
             alt="Proptii High-Fidelity UI Design"
             className="w-full h-full object-contain bg-white group-hover:scale-[1.02] transition-transform duration-500"
           />
@@ -223,10 +223,10 @@ export default function ProptiiCaseStudy() {
 
           <div 
             className="lg:col-span-7 relative group aspect-[16/9] rounded-2xl overflow-hidden border border-border-muted bg-white fabrica-shadow cursor-pointer"
-            onClick={() => setActiveImage({ src: "/images/projects/proptii/slide_04.png", alt: "Property Search & Viewing Booking UI" })}
+            onClick={() => setActiveImage({ src: "/images/projects/proptii/slide_02a.png", alt: "Property Search & Viewing Booking UI" })}
           >
             <img
-              src="/images/projects/proptii/slide_04.png"
+              src="/images/projects/proptii/slide_02a.png"
               alt="Property Search UI"
               className="w-full h-full object-contain bg-white group-hover:scale-[1.02] transition-transform duration-500"
             />
@@ -236,10 +236,232 @@ export default function ProptiiCaseStudy() {
           </div>
         </section>
 
-        {/* Section 2: CPaaS & API Architecture */}
+        {/* Section 2: Market & User Research */}
         <section className="p-8 sm:p-12 rounded-3xl border border-border-muted bg-bg-secondary fabrica-shadow flex flex-col gap-8">
           <div>
-            <span className="section-label">02. Platform Architecture</span>
+            <span className="section-label">02. Market & User Research</span>
+            <h2 className="text-3xl font-bold text-text-primary tracking-tight mt-1">
+              UK Rental Market Discovery & Tenant Journey Analysis
+            </h2>
+            <p className="text-sm text-text-secondary max-w-3xl mt-2 leading-relaxed">
+              We conducted qualitative user interviews and operational mapping across UK property managers, letting agents, and prospective tenants to identify critical friction points in traditional property search and tenant referencing.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            {/* Card 1: Market Research Discovery (Slide 03) */}
+            <div className="flex flex-col gap-3">
+              <div
+                className="relative group aspect-[16/9] w-full rounded-xl overflow-hidden border border-border-muted bg-white cursor-pointer"
+                onClick={() => setActiveImage({ src: "/images/projects/proptii/slide_03.png", alt: "Proptii Market Research & Discovery slide" })}
+              >
+                <img
+                  src="/images/projects/proptii/slide_03.png"
+                  alt="Proptii Market Discovery"
+                  className="w-full h-full object-cover group-hover:scale-[1.01] transition-transform duration-500"
+                />
+                <div className="absolute bottom-4 right-4 px-3 py-1.5 rounded-lg bg-black/70 backdrop-blur-md text-white text-xs flex items-center gap-1.5">
+                  <ZoomIn className="w-3.5 h-3.5" />
+                  <span>Zoom Discovery Slide</span>
+                </div>
+              </div>
+              <div className="px-1">
+                <h4 className="text-sm font-bold text-text-primary">UK PropTech Market Insights</h4>
+                <p className="text-xs text-text-secondary mt-1">
+                  Analysis of traditional UK letting workflows, identifying key bottlenecks in manual paper referencing, delayed deposit verification, and fragmented communication.
+                </p>
+              </div>
+            </div>
+
+            {/* Card 2: User Search & Viewing Intent (Slide 04) */}
+            <div className="flex flex-col gap-3">
+              <div
+                className="relative group aspect-[16/9] w-full rounded-xl overflow-hidden border border-border-muted bg-white cursor-pointer"
+                onClick={() => setActiveImage({ src: "/images/projects/proptii/slide_04.png", alt: "Proptii Tenant Search & Viewing Intent Discovery slide" })}
+              >
+                <img
+                  src="/images/projects/proptii/slide_04.png"
+                  alt="Proptii Tenant Search & Viewing Intent"
+                  className="w-full h-full object-cover group-hover:scale-[1.01] transition-transform duration-500"
+                />
+                <div className="absolute bottom-4 right-4 px-3 py-1.5 rounded-lg bg-black/70 backdrop-blur-md text-white text-xs flex items-center gap-1.5">
+                  <ZoomIn className="w-3.5 h-3.5" />
+                  <span>Zoom Search UX Slide</span>
+                </div>
+              </div>
+              <div className="px-1">
+                <h4 className="text-sm font-bold text-text-primary">Tenant Search & Viewing Intent</h4>
+                <p className="text-xs text-text-secondary mt-1">
+                  Research into tenant decision-making patterns, highlighting the demand for upfront un-gated property search and instant viewing reservations.
+                </p>
+              </div>
+            </div>
+
+            {/* Card 3: Journey & Operational Friction (Slide 05) */}
+            <div className="flex flex-col gap-3">
+              <div
+                className="relative group aspect-[16/9] w-full rounded-xl overflow-hidden border border-border-muted bg-white cursor-pointer"
+                onClick={() => setActiveImage({ src: "/images/projects/proptii/slide_05.png", alt: "Proptii End-to-End Letting Journey & Pain Points slide" })}
+              >
+                <img
+                  src="/images/projects/proptii/slide_05.png"
+                  alt="Proptii User Journey & Pain Points"
+                  className="w-full h-full object-cover group-hover:scale-[1.01] transition-transform duration-500"
+                />
+                <div className="absolute bottom-4 right-4 px-3 py-1.5 rounded-lg bg-black/70 backdrop-blur-md text-white text-xs flex items-center gap-1.5">
+                  <ZoomIn className="w-3.5 h-3.5" />
+                  <span>Zoom Journey Slide</span>
+                </div>
+              </div>
+              <div className="px-1">
+                <h4 className="text-sm font-bold text-text-primary">End-to-End Letting Journey Mapping</h4>
+                <p className="text-xs text-text-secondary mt-1">
+                  Mapping multi-stakeholder interactions across tenants, letting agents, and landlords to eliminate drop-offs in the referencing funnel.
+                </p>
+              </div>
+            </div>
+
+            {/* Card 4: Verification & Identity Requirements (Slide 07) */}
+            <div className="flex flex-col gap-3">
+              <div
+                className="relative group aspect-[16/9] w-full rounded-xl overflow-hidden border border-border-muted bg-white cursor-pointer"
+                onClick={() => setActiveImage({ src: "/images/projects/proptii/slide_07.png", alt: "Proptii Automated Identity & Verification Flow slide" })}
+              >
+                <img
+                  src="/images/projects/proptii/slide_07.png"
+                  alt="Proptii Identity & Verification Flow"
+                  className="w-full h-full object-cover group-hover:scale-[1.01] transition-transform duration-500"
+                />
+                <div className="absolute bottom-4 right-4 px-3 py-1.5 rounded-lg bg-black/70 backdrop-blur-md text-white text-xs flex items-center gap-1.5">
+                  <ZoomIn className="w-3.5 h-3.5" />
+                  <span>Zoom Verification Slide</span>
+                </div>
+              </div>
+              <div className="px-1">
+                <h4 className="text-sm font-bold text-text-primary">Automated Identity & Verification Flow</h4>
+                <p className="text-xs text-text-secondary mt-1">
+                  User validation research establishing compliance criteria for Open Banking integration, digital ID checks, and instant background validation.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Section 3: Key User Flow & Wireframes */}
+        <section className="p-8 sm:p-12 rounded-3xl border border-border-muted bg-bg-secondary fabrica-shadow flex flex-col gap-8">
+          <div>
+            <span className="section-label">03. Key User Flow & Wireframes</span>
+            <h2 className="text-3xl font-bold text-text-primary tracking-tight mt-1">
+              User Flow Architecture & Interface Wireframes
+            </h2>
+            <p className="text-sm text-text-secondary max-w-3xl mt-2 leading-relaxed">
+              Translating tenant and landlord requirements into structured wireframe blueprints, task flows, and multi-step verification architectures before high-fidelity visual design.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            {/* Card 1: User Flow Architecture (Slide 08) */}
+            <div className="flex flex-col gap-3">
+              <div
+                className="relative group aspect-[16/9] w-full rounded-xl overflow-hidden border border-border-muted bg-white cursor-pointer"
+                onClick={() => setActiveImage({ src: "/images/projects/proptii/slide_08.png", alt: "Proptii Tenant Onboarding & Viewing Booking User Flow slide" })}
+              >
+                <img
+                  src="/images/projects/proptii/slide_08.png"
+                  alt="Proptii User Flow Architecture"
+                  className="w-full h-full object-cover group-hover:scale-[1.01] transition-transform duration-500"
+                />
+                <div className="absolute bottom-4 right-4 px-3 py-1.5 rounded-lg bg-black/70 backdrop-blur-md text-white text-xs flex items-center gap-1.5">
+                  <ZoomIn className="w-3.5 h-3.5" />
+                  <span>Zoom Flow Slide</span>
+                </div>
+              </div>
+              <div className="px-1">
+                <h4 className="text-sm font-bold text-text-primary">Tenant Onboarding & Viewing Booking User Flow</h4>
+                <p className="text-xs text-text-secondary mt-1">
+                  Architected step-by-step user journey mapping tenant search inputs, calendar availability selection, and instant viewing confirmation logic.
+                </p>
+              </div>
+            </div>
+
+            {/* Card 2: Referencing Wireframes (Slide 09) */}
+            <div className="flex flex-col gap-3">
+              <div
+                className="relative group aspect-[16/9] w-full rounded-xl overflow-hidden border border-border-muted bg-white cursor-pointer"
+                onClick={() => setActiveImage({ src: "/images/projects/proptii/slide_09.png", alt: "Proptii Multi-Step Referencing & Identity Wireframe Blueprints slide" })}
+              >
+                <img
+                  src="/images/projects/proptii/slide_09.png"
+                  alt="Proptii Wireframe Blueprints"
+                  className="w-full h-full object-cover group-hover:scale-[1.01] transition-transform duration-500"
+                />
+                <div className="absolute bottom-4 right-4 px-3 py-1.5 rounded-lg bg-black/70 backdrop-blur-md text-white text-xs flex items-center gap-1.5">
+                  <ZoomIn className="w-3.5 h-3.5" />
+                  <span>Zoom Wireframes</span>
+                </div>
+              </div>
+              <div className="px-1">
+                <h4 className="text-sm font-bold text-text-primary">Multi-Step Referencing & Identity Wireframe Blueprints</h4>
+                <p className="text-xs text-text-secondary mt-1">
+                  Structural wireframe layouts defining form fields, verification progress indicators, and automated document submission states.
+                </p>
+              </div>
+            </div>
+
+            {/* Card 3: Landlord Dashboard Wireframes (Slide 11) */}
+            <div className="flex flex-col gap-3">
+              <div
+                className="relative group aspect-[16/9] w-full rounded-xl overflow-hidden border border-border-muted bg-white cursor-pointer"
+                onClick={() => setActiveImage({ src: "/images/projects/proptii/slide_11.png", alt: "Proptii Landlord Approval Dashboard & Lead Queue Wireframes slide" })}
+              >
+                <img
+                  src="/images/projects/proptii/slide_11.png"
+                  alt="Proptii Landlord Dashboard Wireframes"
+                  className="w-full h-full object-cover group-hover:scale-[1.01] transition-transform duration-500"
+                />
+                <div className="absolute bottom-4 right-4 px-3 py-1.5 rounded-lg bg-black/70 backdrop-blur-md text-white text-xs flex items-center gap-1.5">
+                  <ZoomIn className="w-3.5 h-3.5" />
+                  <span>Zoom Dashboard Wireframes</span>
+                </div>
+              </div>
+              <div className="px-1">
+                <h4 className="text-sm font-bold text-text-primary">Landlord Approval Dashboard Wireframes</h4>
+                <p className="text-xs text-text-secondary mt-1">
+                  Wireframe architecture for property managers to review tenant reference scores, check background verifications, and trigger instant lease approvals.
+                </p>
+              </div>
+            </div>
+
+            {/* Card 4: Notification Webhook Logic Wireframes (Slide 13) */}
+            <div className="flex flex-col gap-3">
+              <div
+                className="relative group aspect-[16/9] w-full rounded-xl overflow-hidden border border-border-muted bg-white cursor-pointer"
+                onClick={() => setActiveImage({ src: "/images/projects/proptii/slide_13.png", alt: "Proptii Automated Notification & Webhook Logic Wireframes slide" })}
+              >
+                <img
+                  src="/images/projects/proptii/slide_13.png"
+                  alt="Proptii Webhook Wireframes"
+                  className="w-full h-full object-cover group-hover:scale-[1.01] transition-transform duration-500"
+                />
+                <div className="absolute bottom-4 right-4 px-3 py-1.5 rounded-lg bg-black/70 backdrop-blur-md text-white text-xs flex items-center gap-1.5">
+                  <ZoomIn className="w-3.5 h-3.5" />
+                  <span>Zoom Logic Wireframes</span>
+                </div>
+              </div>
+              <div className="px-1">
+                <h4 className="text-sm font-bold text-text-primary">Automated Notification & Webhook Logic Wireframes</h4>
+                <p className="text-xs text-text-secondary mt-1">
+                  Structural wireframe blueprints detailing webhook status alerts, tenant SMS/Email reminder dialogs, and automated event triggers.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Section 4: CPaaS & API Architecture */}
+        <section className="p-8 sm:p-12 rounded-3xl border border-border-muted bg-bg-secondary fabrica-shadow flex flex-col gap-8">
+          <div>
+            <span className="section-label">04. Platform Architecture</span>
             <h2 className="text-3xl font-bold text-text-primary tracking-tight mt-1">
               Enterprise API Integration & Omnichannel Communication Engine
             </h2>
@@ -264,10 +486,10 @@ export default function ProptiiCaseStudy() {
           </div>
         </section>
 
-        {/* Section 3: Visual UI Storyboard Grid */}
+        {/* Section 5: Visual UI Storyboard Grid */}
         <section className="flex flex-col gap-10">
           <div>
-            <span className="section-label">03. High-Fidelity UI Gallery</span>
+            <span className="section-label">05. High-Fidelity UI Gallery</span>
             <h2 className="text-3xl font-bold text-text-primary tracking-tight mt-1">Design System & Key User Journeys</h2>
           </div>
 
@@ -297,6 +519,93 @@ export default function ProptiiCaseStudy() {
                 </div>
               </div>
             ))}
+          </div>
+        </section>
+
+        {/* Section 6: Testing & Impact */}
+        <section className="p-8 sm:p-12 rounded-3xl border border-border-muted bg-bg-secondary fabrica-shadow flex flex-col gap-8">
+          <div>
+            <span className="section-label">06. Testing & Impact</span>
+            <h2 className="text-3xl font-bold text-text-primary tracking-tight mt-1">
+              Usability Validation, Conversion Gains & Scale Impact
+            </h2>
+            <p className="text-sm text-text-secondary max-w-3xl mt-2 leading-relaxed">
+              Rigorous usability testing loops with property managers and prospective tenants demonstrated dramatic time savings, improved search conversion, and rapid platform adoption.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {/* Card 1: Usability Testing (Slide 18) */}
+            <div className="flex flex-col gap-3">
+              <div
+                className="relative group aspect-[16/9] w-full rounded-xl overflow-hidden border border-border-muted bg-white cursor-pointer"
+                onClick={() => setActiveImage({ src: "/images/projects/proptii/slide_18.png", alt: "Proptii Usability Testing & Friction Validation slide" })}
+              >
+                <img
+                  src="/images/projects/proptii/slide_18.png"
+                  alt="Proptii Usability Testing"
+                  className="w-full h-full object-cover group-hover:scale-[1.01] transition-transform duration-500"
+                />
+                <div className="absolute bottom-4 right-4 px-3 py-1.5 rounded-lg bg-black/70 backdrop-blur-md text-white text-xs flex items-center gap-1.5">
+                  <ZoomIn className="w-3.5 h-3.5" />
+                  <span>Zoom Usability Slide</span>
+                </div>
+              </div>
+              <div className="px-1">
+                <h4 className="text-sm font-bold text-text-primary">Usability Testing & Friction Mapping</h4>
+                <p className="text-xs text-text-secondary mt-1">
+                  Evaluated 3-step referencing wizards and viewing booking flows with real tenants and letting agents, resolving UX bottlenecks to achieve an 85% task completion speedup.
+                </p>
+              </div>
+            </div>
+
+            {/* Card 2: Conversion Metrics (Slide 19) */}
+            <div className="flex flex-col gap-3">
+              <div
+                className="relative group aspect-[16/9] w-full rounded-xl overflow-hidden border border-border-muted bg-white cursor-pointer"
+                onClick={() => setActiveImage({ src: "/images/projects/proptii/slide_19.png", alt: "Proptii Conversion & Growth Impact slide" })}
+              >
+                <img
+                  src="/images/projects/proptii/slide_19.png"
+                  alt="Proptii Conversion & Growth Impact"
+                  className="w-full h-full object-cover group-hover:scale-[1.01] transition-transform duration-500"
+                />
+                <div className="absolute bottom-4 right-4 px-3 py-1.5 rounded-lg bg-black/70 backdrop-blur-md text-white text-xs flex items-center gap-1.5">
+                  <ZoomIn className="w-3.5 h-3.5" />
+                  <span>Zoom Impact Slide</span>
+                </div>
+              </div>
+              <div className="px-1">
+                <h4 className="text-sm font-bold text-text-primary">Search Conversion & Growth Impact</h4>
+                <p className="text-xs text-text-secondary mt-1">
+                  Un-gated search architecture and instant viewing reservations drove a +34% boost in search-to-viewing conversion and reduced tenant drop-offs.
+                </p>
+              </div>
+            </div>
+
+            {/* Card 3: Platform Scale (Slide 21) */}
+            <div className="flex flex-col gap-3">
+              <div
+                className="relative group aspect-[16/9] w-full rounded-xl overflow-hidden border border-border-muted bg-white cursor-pointer"
+                onClick={() => setActiveImage({ src: "/images/projects/proptii/slide_21.png", alt: "Proptii Platform Scale & Enterprise Adoption slide" })}
+              >
+                <img
+                  src="/images/projects/proptii/slide_21.png"
+                  alt="Proptii Scale & Adoption"
+                  className="w-full h-full object-cover group-hover:scale-[1.01] transition-transform duration-500"
+                />
+                <div className="absolute bottom-4 right-4 px-3 py-1.5 rounded-lg bg-black/70 backdrop-blur-md text-white text-xs flex items-center gap-1.5">
+                  <ZoomIn className="w-3.5 h-3.5" />
+                  <span>Zoom Scale Slide</span>
+                </div>
+              </div>
+              <div className="px-1">
+                <h4 className="text-sm font-bold text-text-primary">Enterprise Adoption & Scale</h4>
+                <p className="text-xs text-text-secondary mt-1">
+                  Onboarded 150+ active UK residential landlords and processed thousands of automated API webhook notification triggers with zero fallback failures.
+                </p>
+              </div>
+            </div>
           </div>
         </section>
       </article>

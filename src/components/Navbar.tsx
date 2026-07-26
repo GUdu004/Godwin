@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
-import { Download, ExternalLink, X } from "lucide-react";
+import { ExternalLink, X } from "lucide-react";
 
 export function Navbar() {
   const [open, setOpen] = useState(false);
@@ -61,7 +61,6 @@ export function Navbar() {
               { label: "Work", href: "/#work" },
               { label: "Skills", href: "/#skills" },
               { label: "About", href: "/#about" },
-              { label: "Resume / ATS", href: "/resume" },
             ].map((item) => (
               <Link
                 key={item.href}
@@ -74,20 +73,10 @@ export function Navbar() {
             ))}
           </div>
 
-          {/* Divider & Action Buttons */}
+          {/* Action Buttons */}
           <div className="mt-auto pt-8 border-t border-border-muted flex flex-col sm:flex-row gap-4">
             <a
-              href="/GodwinUdu_Portfolio_ProductDesign.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
-              onClick={close}
-              className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl border border-border-active text-text-primary font-semibold text-sm hover:bg-bg-tertiary transition-all"
-            >
-              <Download className="w-4 h-4" />
-              Download Portfolio PDF
-            </a>
-            <a
-              href="https://linkedin.com/in/godwinudu"
+              href="https://www.linkedin.com/in/godwin-udu/"
               target="_blank"
               rel="noopener noreferrer"
               onClick={close}
