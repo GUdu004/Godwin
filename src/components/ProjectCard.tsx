@@ -70,24 +70,27 @@ export function ProjectCard({
         </div>
 
         {/* ── Below-card metadata (Fabrica's title + year + dots) */}
-        <div className="flex items-start justify-between pt-4 px-1">
+        <div className="flex items-start justify-between pt-4 px-1 gap-4">
           <div className="flex flex-col gap-1">
             {/* Title + year — Fabrica pattern */}
             <div className="flex items-baseline gap-3">
-              <span className="text-base font-bold text-text-primary tracking-tight">{title}.</span>
+              <Link href={link} className="text-base font-bold text-text-primary tracking-tight hover:underline">
+                {title}.
+              </Link>
               <span className="text-sm text-text-muted font-normal">/{year}</span>
             </div>
             {/* Subtitle */}
             <p className="text-xs text-text-secondary leading-relaxed max-w-sm">{subtitle}</p>
           </div>
 
-          {/* Arrow link — navigate to case study */}
+          {/* Action button — navigate to case study */}
           <Link
             href={link}
-            className="mt-0.5 p-2 rounded-full bg-bg-tertiary text-text-primary hover:bg-text-primary hover:text-bg-secondary transition-all duration-200 shadow-sm flex-shrink-0"
+            className="mt-0.5 px-3 py-1.5 rounded-full bg-bg-tertiary border border-border-muted text-text-primary hover:bg-text-primary hover:text-bg-secondary transition-all duration-200 shadow-sm flex-shrink-0 flex items-center gap-1.5 text-xs font-semibold group/link"
             title={`View ${title} case study`}
           >
-            <ArrowUpRight className="w-4 h-4" />
+            <span>View Project</span>
+            <ArrowUpRight className="w-3.5 h-3.5 group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5 transition-transform" />
           </Link>
         </div>
 
