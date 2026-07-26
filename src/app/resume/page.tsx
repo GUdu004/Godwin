@@ -94,7 +94,7 @@ export default function ResumePage() {
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 border-b border-border-muted print:border-neutral-300 pb-8">
           <div className="flex flex-col gap-2">
             <h1 className="font-geist text-4xl font-bold text-text-primary print:text-black tracking-tight">Godwin Udu</h1>
-            <p className="font-geist text-lg font-medium text-text-primary print:text-neutral-700">Senior Product Designer</p>
+            <p className="font-geist text-lg font-medium text-text-primary print:text-neutral-700">Product Designer</p>
             <p className="text-xs max-w-xl leading-relaxed">
               B2B SaaS, Platform Architecture, and Design Systems specialist. Proven record of optimizing complex digital workflows, engineering resilient data integration interfaces, and driving conversion via PLG models.
             </p>

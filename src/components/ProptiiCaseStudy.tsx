@@ -171,8 +171,20 @@ export default function ProptiiCaseStudy() {
                 <span className="text-xl font-semibold text-text-secondary text-right leading-snug">
                   {m.label}
                 </span>
-                <p className="text-[17px] text-text-muted leading-relaxed max-w-[75%]">
-                  {m.desc}
+                <p className="text-[13.5px] text-text-muted leading-relaxed max-w-[90%]">
+                  {(() => {
+                    const pattern = /(\bn=\d+|\b\d+-(?:week|student|step|day|month)\b|\b\d+[–-]\d+\b|\b\d+\+\b|\b\d+D\b)/g;
+                    const parts = m.desc.split(pattern);
+                    return parts.map((part, i) =>
+                      pattern.test(part) ? (
+                        <span key={i} className="font-semibold text-text-secondary">
+                          {part}
+                        </span>
+                      ) : (
+                        part
+                      )
+                    );
+                  })()}
                 </p>
               </div>
 
@@ -269,7 +281,7 @@ export default function ProptiiCaseStudy() {
                   <img
                     src={slide.image}
                     alt={slide.title}
-                    className="w-full h-full object-contain bg-white group-hover:scale-[1.03] transition-transform duration-500"
+                    className="w-full h-full object-cover group-hover:scale-[1.03] transition-transform duration-500"
                   />
                   <span className="absolute top-3 left-3 px-2.5 py-1 rounded-full bg-white/90 backdrop-blur-md text-[11px] font-semibold text-text-primary border border-black/10">
                     {slide.tag}

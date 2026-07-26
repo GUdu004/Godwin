@@ -61,7 +61,7 @@ export default function HomePage() {
         { label: "Revenue Growth", value: "283% Acceleration" },
         { label: "Active Students", value: "8,000+" },
       ],
-      imageSrc: "/images/projects/myedufusion/slide_23.png",
+      imageSrc: "/images/projects/myedufusion/slide_01.png",
       link: "/projects/myedufusion",
       accentColor: "green" as const,
       year: "2023",
@@ -93,8 +93,9 @@ export default function HomePage() {
       items: [
         "B2B SaaS Design",
         "Product-Led Growth (PLG)",
+        "User Research",
+        "Usability Testing",
         "Enterprise Workflows",
-        "Developer Experience (DevEx)",
         "Data-Informed Iterations",
       ],
     },
@@ -116,7 +117,7 @@ export default function HomePage() {
       icon: <Layers className="w-4 h-4" />,
       items: [
         "Component Tokenization",
-        "Figma Auto-Layout 5.0",
+        "Low-to-High-Fidelity Prototyping",
         "WCAG 2.1 AA Compliance",
         "Dark/Light Theme Variables",
         "Developer Handoff Redlines",
@@ -130,6 +131,8 @@ export default function HomePage() {
         "Figma Enterprise",
         "Miro / FigJam",
         "Notion / JIRA / Confluence",
+        "Agile/Lean",
+        "Developer Experience (DevEx)",
         "Next.js / HTML5",
         "Tailwind CSS",
       ],
@@ -158,9 +161,9 @@ export default function HomePage() {
                 </span>
               </h1>
               <p className="text-lg sm:text-xl text-white/70 leading-relaxed font-normal max-w-3xl">
-                I take multi-sided B2B SaaS platforms and developer-first workflows from discovery to
-                high-fidelity visual UI. Focused on systems where usability, API integration, and
-                accessibility directly drive user retention.
+                I design B2B SaaS platforms and communications infrastructure from omnichannel
+                notification systems and API-driven integrations to the design systems that scale them.
+                My focus: turning complex, multi-party workflows into interfaces developers can implement and users trust.
               </p>
             </div>
 
@@ -319,9 +322,12 @@ export default function HomePage() {
                     <span className="text-xs font-mono text-white/30 w-8 pt-0.5 flex-shrink-0">{cap.number}</span>
                     <div className="flex-1 flex flex-col gap-3">
                       <h3 className="text-lg font-bold text-white">{cap.category}</h3>
-                      <div className="flex flex-wrap gap-x-6 gap-y-1">
+                      <div className="flex flex-wrap gap-2">
                         {cap.items.map((item, i) => (
-                          <span key={i} className="text-xs text-white/50 font-medium">
+                          <span
+                            key={i}
+                            className="px-3 py-1 rounded-md bg-white/[0.06] border border-white/10 text-xs font-medium text-white/70 hover:text-white hover:border-white/20 transition-colors"
+                          >
                             {item}
                           </span>
                         ))}
@@ -346,22 +352,22 @@ export default function HomePage() {
               <div>
                 <span className="section-label">About Godwin</span>
                 <h2 className="text-3xl sm:text-4xl font-extrabold text-text-primary tracking-tight mt-2">
-                  Senior Product Designer with a{" "}
-                  <span className="text-text-muted">passion for scalable software.</span>
+                  Product Designer
                 </h2>
               </div>
               <p className="text-base text-text-secondary leading-relaxed">
                 With years of experience taking multi-tenant SaaS systems, property technology
-                platforms, and educational management tools from discovery to live deployment, I
-                specialise in simplifying complex user journeys and bridging the gap between product
-                design and engineering execution.
+                platforms, and educational management tools from discovery to live deployment, I take
+                ownership of a product domain end-to-end from user research and low-fidelity
+                exploration through to shipped, accessible UI, partnering closely with PMs and engineers
+                rather than just handing off files.
               </p>
 
               {/* Stat chips */}
               <div className="grid grid-cols-3 gap-4">
                 {[
                   { value: "85%", label: "Workflow Time Saved" },
-                  { value: "70+",  label: "Enterprise Clients" },
+                  { value: "70+", label: "Enterprise Clients" },
                   { value: "WCAG 2.1", label: "AA Compliant" },
                 ].map((s, idx) => (
                   <div
@@ -380,7 +386,7 @@ export default function HomePage() {
               <div>
                 <h3 className="text-xl font-bold text-text-primary">Get In Touch</h3>
                 <p className="text-sm text-text-secondary mt-2 leading-relaxed">
-                  Currently discussing Senior Product Designer roles. Feel free to reach out.
+                  Currently discussing Product Designer roles. Feel free to reach out.
                 </p>
               </div>
               <div className="flex flex-col gap-3">

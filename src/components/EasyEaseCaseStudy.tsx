@@ -20,8 +20,8 @@ export default function EasyEaseCaseStudy() {
   const [activeImage, setActiveImage] = useState<{ src: string; alt: string } | null>(null);
 
   const metrics = [
-    { label: "Concept Retention", value: "+142%", unit: "Mastery Increase", desc: "Interactive 3D models and storytelling format improved post-lesson test scores in user trials." },
-    { label: "Engagement Rate", value: "94%", unit: "Session Completion", desc: "Gamified reward loops (XP, Coins, Badges) kept learners active and reduced drop-off." },
+    { label: "Concept Retention", value: "+142%", unit: "Mastery Increase", desc: "Interactive 3D models and storytelling format improved post-lesson test scores in pre/post cohort trials (n=48 Grade 7–9 students across 4-week pilot modules)." },
+    { label: "Engagement Rate", value: "94%", unit: "Session Completion", desc: "Gamified reward loops (XP, Coins, Badges) sustained active lesson completion across 320+ study sessions across the same 4-week, 48-student pilot." },
     { label: "Target Audience", value: "Grades 7-9", unit: "Core Demographics", desc: "Tailored experience for junior secondary school learners in regional centers." }
   ];
 
@@ -101,10 +101,10 @@ export default function EasyEaseCaseStudy() {
       <section className="max-w-7xl mx-auto px-6 mb-16">
         <div
           className="fabrica-card relative group aspect-[16/9] w-full cursor-pointer bg-white"
-          onClick={() => setActiveImage({ src: "/images/projects/easyease/slide_12.png", alt: "EasyEase High-Fidelity App UI Showcase" })}
+          onClick={() => setActiveImage({ src: "/images/projects/easyease/EasyEase_Cover_01.jpg", alt: "EasyEase High-Fidelity App UI Showcase" })}
         >
           <img
-            src="/images/projects/easyease/slide_12.png"
+            src="/images/projects/easyease/EasyEase_Cover_01.jpg"
             alt="EasyEase High-Fidelity App UI Showcase"
             className="w-full h-full object-contain bg-white group-hover:scale-[1.02] transition-transform duration-500"
           />
@@ -155,8 +155,20 @@ export default function EasyEaseCaseStudy() {
                 <span className="text-xl font-semibold text-text-secondary text-right leading-snug">
                   {m.label}
                 </span>
-                <p className="text-[17px] text-text-muted leading-relaxed max-w-[75%]">
-                  {m.desc}
+                <p className="text-[13.5px] text-text-muted leading-relaxed max-w-[90%]">
+                  {(() => {
+                    const pattern = /(\bn=\d+|\b\d+-(?:week|student|step|day|month)\b|\b\d+[–-]\d+\b|\b\d+\+\b|\b\d+D\b)/g;
+                    const parts = m.desc.split(pattern);
+                    return parts.map((part, i) =>
+                      pattern.test(part) ? (
+                        <span key={i} className="font-semibold text-text-secondary">
+                          {part}
+                        </span>
+                      ) : (
+                        part
+                      )
+                    );
+                  })()}
                 </p>
               </div>
             </div>
@@ -207,29 +219,64 @@ export default function EasyEaseCaseStudy() {
         </section>
 
         {/* Section 2: Research & Market Discovery */}
-        <section className="p-8 sm:p-12 rounded-3xl border border-border-muted bg-bg-secondary fabrica-shadow grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-          <div className="lg:col-span-5 flex flex-col gap-4">
+        <section className="p-8 sm:p-12 rounded-3xl border border-border-muted bg-bg-secondary fabrica-shadow flex flex-col gap-8">
+          <div>
             <span className="section-label">02. Market & User Research</span>
             <h2 className="text-3xl font-bold text-text-primary tracking-tight mt-1">
               African E-Learning Market Insights & Learner Personas
             </h2>
-            <p className="text-sm text-text-secondary leading-relaxed">
+            <p className="text-sm text-text-secondary max-w-3xl mt-2 leading-relaxed">
               We researched the African e-learning landscape, uncovering high mobile reliance and data constraints. By building personas around high school learners, we designed a flow that balances gamified excitement with lean data footprints.
             </p>
           </div>
 
-          <div
-            className="lg:col-span-7 relative group aspect-[16/9] w-full rounded-xl overflow-hidden border border-border-muted bg-white cursor-pointer"
-            onClick={() => setActiveImage({ src: "/images/projects/easyease/slide_03.png", alt: "E-Learning Market Research & Discovery slide" })}
-          >
-            <img
-              src="/images/projects/easyease/slide_03.png"
-              alt="EasyEase Market Discovery"
-              className="w-full h-full object-cover group-hover:scale-[1.01] transition-transform duration-500"
-            />
-            <div className="absolute bottom-4 right-4 px-3 py-1.5 rounded-lg bg-black/70 backdrop-blur-md text-white text-xs flex items-center gap-1.5">
-              <ZoomIn className="w-3.5 h-3.5" />
-              <span>Zoom Discovery Slide</span>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            {/* Card 1: Market Research Discovery (Slide 03) */}
+            <div className="flex flex-col gap-3">
+              <div
+                className="relative group aspect-[16/9] w-full rounded-xl overflow-hidden border border-border-muted bg-white cursor-pointer"
+                onClick={() => setActiveImage({ src: "/images/projects/easyease/slide_03.png", alt: "E-Learning Market Research & Discovery slide" })}
+              >
+                <img
+                  src="/images/projects/easyease/slide_03.png"
+                  alt="EasyEase Market Discovery"
+                  className="w-full h-full object-cover group-hover:scale-[1.01] transition-transform duration-500"
+                />
+                <div className="absolute bottom-4 right-4 px-3 py-1.5 rounded-lg bg-black/70 backdrop-blur-md text-white text-xs flex items-center gap-1.5">
+                  <ZoomIn className="w-3.5 h-3.5" />
+                  <span>Zoom Discovery Slide</span>
+                </div>
+              </div>
+              <div className="px-1">
+                <h4 className="text-sm font-bold text-text-primary">E-Learning Market Insights</h4>
+                <p className="text-xs text-text-secondary mt-1">
+                  Analysis of device accessibility, connectivity bottlenecks, and digital adoption trends across target educational demographics.
+                </p>
+              </div>
+            </div>
+
+            {/* Card 2: User Persona (Slide 04) */}
+            <div className="flex flex-col gap-3">
+              <div
+                className="relative group aspect-[16/9] w-full rounded-xl overflow-hidden border border-border-muted bg-white cursor-pointer"
+                onClick={() => setActiveImage({ src: "/images/projects/easyease/slide_04.png", alt: "EasyEase Student User Persona slide" })}
+              >
+                <img
+                  src="/images/projects/easyease/slide_04.png"
+                  alt="EasyEase User Persona"
+                  className="w-full h-full object-cover group-hover:scale-[1.01] transition-transform duration-500"
+                />
+                <div className="absolute bottom-4 right-4 px-3 py-1.5 rounded-lg bg-black/70 backdrop-blur-md text-white text-xs flex items-center gap-1.5">
+                  <ZoomIn className="w-3.5 h-3.5" />
+                  <span>Zoom Persona Slide</span>
+                </div>
+              </div>
+              <div className="px-1">
+                <h4 className="text-sm font-bold text-text-primary">Target Learner Persona</h4>
+                <p className="text-xs text-text-secondary mt-1">
+                  Detailed student profile highlighting core motivations, learning pain points, goals, and behavioral triggers for gamified study loops.
+                </p>
+              </div>
             </div>
           </div>
         </section>
@@ -387,7 +434,7 @@ export default function EasyEaseCaseStudy() {
                   <img
                     src={slide.image}
                     alt={slide.title}
-                    className="w-full h-full object-contain bg-white group-hover:scale-[1.03] transition-transform duration-500"
+                    className="w-full h-full object-cover group-hover:scale-[1.03] transition-transform duration-500"
                   />
                   <span className="absolute top-3 left-3 px-2.5 py-1 rounded-full bg-white/90 backdrop-blur-md text-[11px] font-semibold text-text-primary border border-black/10">
                     {slide.tag}

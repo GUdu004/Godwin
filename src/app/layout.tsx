@@ -14,8 +14,8 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Godwin Udu — Senior Product Designer Portfolio",
-  description: "Senior Product Designer portfolio specializing in B2B SaaS, platform architecture, and design systems.",
+  title: "Godwin Udu — Product Designer Portfolio",
+  description: "Product Designer portfolio specializing in B2B SaaS, platform architecture, and design systems.",
 };
 
 export default function RootLayout({
