@@ -79,7 +79,7 @@ export default function HomePage() {
       imageSrc: "/images/projects/easyease/slide_12.png",
       link: "/projects/easyease",
       accentColor: "orange" as const,
-      year: "2023",
+      year: "2022",
     },
   ];
 

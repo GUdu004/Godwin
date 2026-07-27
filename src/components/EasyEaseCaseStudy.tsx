@@ -80,7 +80,7 @@ export default function EasyEaseCaseStudy() {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6 pt-6 border-t border-border-muted max-w-4xl text-xs">
           <div className="flex flex-col gap-1">
             <span className="text-text-muted font-mono uppercase tracking-wider">Role</span>
-            <span className="text-text-primary font-bold">Lead Product Designer</span>
+            <span className="text-text-primary font-bold">Lead Product Designer & Product Manager</span>
           </div>
           <div className="flex flex-col gap-1">
             <span className="text-text-muted font-mono uppercase tracking-wider">Timeline</span>
