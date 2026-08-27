@@ -291,10 +291,9 @@ export default function HomePage() {
               </p>
 
               {/* Stat chips */}
-              <div className="grid grid-cols-3 gap-4">
+              <div className="grid grid-cols-2 gap-4">
                 {[
                   { value: "85%", label: "Workflow Time Saved" },
-                  { value: "70+", label: "Enterprise Clients" },
                   { value: "WCAG 2.1", label: "AA Compliant" },
                 ].map((s, idx) => (
                   <div
