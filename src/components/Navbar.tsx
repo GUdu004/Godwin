@@ -11,7 +11,7 @@ export function Navbar() {
 
   return (
     <>
-      {/* ── Top bar ─────────────────────────────────────────── */}
+      {/* Top bar */}
       <header className="sticky top-0 z-50 w-full glass-header border-b border-border-muted">
         <div className="max-w-7xl mx-auto px-6 h-14 flex items-center justify-between">
 
@@ -20,20 +20,33 @@ export function Navbar() {
             Godwin Udu
           </Link>
 
-          {/* Hamburger — two lines like Fabrica */}
+          {/* Desktop Navigation Links */}
+          <nav className="hidden sm:flex items-center gap-8 text-sm font-semibold text-text-secondary">
+            <Link href="/#work" className="hover:text-text-primary transition-colors">
+              Work
+            </Link>
+            <Link href="/#skills" className="hover:text-text-primary transition-colors">
+              Skills
+            </Link>
+            <Link href="/#about" className="hover:text-text-primary transition-colors">
+              About
+            </Link>
+          </nav>
+
+          {/* Hamburger (Mobile only) */}
           <button
             onClick={() => setOpen((v) => !v)}
             aria-label={open ? "Close menu" : "Open menu"}
             aria-expanded={open}
-            className="flex flex-col gap-[5px] p-2 rounded-md hover:bg-bg-tertiary transition-colors group"
+            className="sm:hidden flex flex-col gap-[5px] p-2 rounded-md hover:bg-bg-tertiary transition-colors group"
           >
             <span
-              className={`block h-[1.5px] bg-text-primary transition-all duration-300 origin-center ${
+              className={`block h-[1.5px] bg-text-primary transition-transform duration-300 origin-center ${
                 open ? "w-5 rotate-45 translate-y-[3.5px]" : "w-5"
               }`}
             />
             <span
-              className={`block h-[1.5px] bg-text-primary transition-all duration-300 ${
+              className={`block h-[1.5px] bg-text-primary transition-transform duration-300 ${
                 open ? "w-5 -rotate-45 -translate-y-[3.5px]" : "w-4"
               }`}
             />
@@ -41,8 +54,8 @@ export function Navbar() {
         </div>
       </header>
 
-      {/* ── Drawer overlay ──────────────────────────────────── */}
-      <nav className={`nav-drawer ${open ? "open" : "closed"} z-40`}>
+      {/* Drawer overlay (Mobile only) */}
+      <nav className={`nav-drawer ${open ? "open" : "closed"} z-40 sm:hidden`}>
         <div className="max-w-7xl mx-auto px-6 w-full flex-grow flex flex-col pt-4 pb-10">
           {/* Close button (top-right, aligned with grid) */}
           <div className="flex justify-end h-14 items-center">
@@ -55,7 +68,7 @@ export function Navbar() {
             </button>
           </div>
 
-          {/* Nav links — large editorial style aligned with header logo */}
+          {/* Nav links */}
           <div className="flex flex-col gap-1 mt-4 sm:mt-8">
             {[
               { label: "Work", href: "/#work" },

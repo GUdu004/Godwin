@@ -14,7 +14,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Godwin Udu — Product Designer Portfolio",
+  title: "Godwin Udu : Product Designer Portfolio",
   description: "Product Designer portfolio specializing in B2B SaaS, platform architecture, and design systems.",
 };
 
@@ -28,7 +28,7 @@ export default function RootLayout({
       lang="en"
       className={`${geistSans.variable} ${inter.variable} h-full antialiased dark`}
     >
-      <body className="min-h-full flex flex-col bg-bg-primary text-text-secondary font-inter pt-8">
+      <body className="min-h-full flex flex-col bg-bg-primary text-text-secondary font-sans">
         <Navbar />
         {children}
       </body>

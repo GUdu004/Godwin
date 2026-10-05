@@ -144,21 +144,18 @@ export default function HomePage() {
         {/* ═══════════════════════════════════════════════════
             1. HERO SECTION
         ════════════════════════════════════════════════════ */}
-        <section className="relative pt-20 pb-16 sm:pt-28 sm:pb-24 border-b border-white/10 overflow-hidden bg-bg-dark text-white">
-          <div className="max-w-7xl mx-auto px-6 flex flex-col items-start gap-10 z-10">
-
-            {/* Section label — Fabrica ⊕ style */}
-            <span className="section-label-dark">Product Designer</span>
+        <section className="relative pt-16 pb-14 sm:pt-28 sm:pb-24 border-b border-white/10 overflow-hidden bg-bg-dark text-white">
+          <div className="max-w-7xl mx-auto px-6 flex flex-col items-start gap-8 z-10">
 
             {/* Display headline with Fabrica's grey-fade on second half */}
             <div className="max-w-5xl flex flex-col gap-6">
-              <h1 className="text-5xl sm:text-7xl font-extrabold text-white tracking-tight leading-[1.05]">
+              <h1 className="text-4xl sm:text-6xl lg:text-7xl font-extrabold text-white tracking-tight leading-[1.08] min-w-0">
                 Designing enterprise software,{" "}
                 <span className="text-white/40 font-extrabold">
                   complex platform workflows &amp; developer tools.
                 </span>
               </h1>
-              <p className="text-lg sm:text-xl text-white/70 leading-relaxed font-normal max-w-3xl">
+              <p className="text-base sm:text-xl text-white/70 leading-relaxed font-normal max-w-3xl">
                 I design B2B SaaS platforms and communications infrastructure from omnichannel
                 notification systems and API-driven integrations to the design systems that scale them.
                 My focus: turning complex, multi-party workflows into interfaces developers can implement and users trust.
@@ -169,7 +166,7 @@ export default function HomePage() {
             <div className="flex flex-wrap items-center gap-6 pt-2">
               <a
                 href="#work"
-                className="inline-flex items-center gap-2 text-white font-semibold text-sm hover:gap-3 transition-all group"
+                className="inline-flex items-center gap-2 text-white font-semibold text-sm hover:gap-3 transition-[gap,color] duration-200 whitespace-nowrap group"
               >
                 <span>View Work</span>
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
@@ -218,9 +215,9 @@ export default function HomePage() {
         {/* ═══════════════════════════════════════════════════
             3. CAPABILITIES — Dark full-bleed panel (Fabrica Services)
         ════════════════════════════════════════════════════ */}
-        <section id="skills" className="py-20 sm:py-28 border-b border-border-muted">
-          <div className="max-w-7xl mx-auto px-6">
-            <div className="dark-panel px-8 sm:px-12 py-14 sm:py-20 flex flex-col gap-14">
+        <section id="skills" className="py-16 sm:py-28 border-b border-border-muted">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6">
+            <div className="dark-panel px-6 sm:px-12 py-10 sm:py-20 flex flex-col gap-10 sm:gap-14">
 
               {/* Panel header */}
               <div className="flex flex-col gap-4">
@@ -231,11 +228,11 @@ export default function HomePage() {
                   </span>
                   What I Bring
                 </span>
-                <div className="flex items-end gap-4">
-                  <h2 className="text-5xl sm:text-7xl font-extrabold text-white tracking-tight leading-none">
+                <div className="flex items-baseline gap-3 flex-wrap">
+                  <h2 className="text-4xl sm:text-6xl lg:text-7xl font-extrabold text-white tracking-tight leading-none">
                     Capabilities.
                   </h2>
-                  <span className="text-3xl sm:text-5xl font-light text-white/30 pb-1">({capabilities.length})</span>
+                  <span className="text-2xl sm:text-5xl font-light text-white/30">({capabilities.length})</span>
                 </div>
                 <p className="text-white/50 text-sm max-w-md">
                   A systems-first approach combining product strategy, interaction design, and engineering fluency.
@@ -271,7 +268,7 @@ export default function HomePage() {
         {/* ═══════════════════════════════════════════════════
             4. ABOUT & CONTACT
         ════════════════════════════════════════════════════ */}
-        <section id="about" className="py-20 sm:py-28 border-b border-border-muted">
+        <section id="about" className="py-16 sm:py-28 border-b border-border-muted">
           <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
 
             {/* Left — bio */}
@@ -291,16 +288,16 @@ export default function HomePage() {
               </p>
 
               {/* Stat chips */}
-              <div className="grid grid-cols-2 gap-4">
+              <div className="grid grid-cols-2 gap-3 sm:gap-4">
                 {[
                   { value: "85%", label: "Workflow Time Saved" },
                   { value: "WCAG 2.1", label: "AA Compliant" },
                 ].map((s, idx) => (
                   <div
                     key={idx}
-                    className="p-4 rounded-2xl bg-bg-secondary border border-border-muted flex flex-col gap-1"
+                    className="p-3.5 sm:p-4 rounded-2xl bg-bg-secondary border border-border-muted flex flex-col gap-1"
                   >
-                    <div className="text-2xl font-extrabold text-text-primary">{s.value}</div>
+                    <div className="text-xl sm:text-2xl font-extrabold text-text-primary">{s.value}</div>
                     <div className="text-[11px] text-text-muted">{s.label}</div>
                   </div>
                 ))}
@@ -308,7 +305,7 @@ export default function HomePage() {
             </div>
 
             {/* Right — contact card */}
-            <div className="lg:col-span-5 flex flex-col gap-5 p-8 rounded-2xl border border-border-muted bg-bg-secondary">
+            <div className="lg:col-span-5 flex flex-col gap-5 p-6 sm:p-8 rounded-2xl border border-border-muted bg-bg-secondary">
               <div>
                 <h3 className="text-xl font-bold text-text-primary">Get In Touch</h3>
                 <p className="text-sm text-text-secondary mt-2 leading-relaxed">
@@ -320,8 +317,8 @@ export default function HomePage() {
                   href="mailto:godwinudu01@gmail.com"
                   className="flex items-center gap-3 p-3.5 rounded-xl border border-border-muted text-text-primary font-medium text-sm hover:border-border-active hover:bg-bg-tertiary transition-all"
                 >
-                  <Mail className="w-4 h-4" />
-                  Email Godwin
+                  <Mail className="w-4 h-4 flex-shrink-0" />
+                  <span>Email Godwin</span>
                 </a>
                 <a
                   href="https://www.linkedin.com/in/godwin-udu/"
@@ -329,9 +326,9 @@ export default function HomePage() {
                   rel="noopener noreferrer"
                   className="flex items-center gap-3 p-3.5 rounded-xl bg-text-primary text-bg-primary font-medium text-sm hover:bg-black/80 transition-all"
                 >
-                  <Linkedin className="w-4 h-4 fill-current" />
-                  Connect on LinkedIn
-                  <ExternalLink className="w-3.5 h-3.5 ml-auto" />
+                  <Linkedin className="w-4 h-4 fill-current flex-shrink-0" />
+                  <span>Connect on LinkedIn</span>
+                  <ExternalLink className="w-3.5 h-3.5 ml-auto flex-shrink-0" />
                 </a>
               </div>
             </div>
@@ -356,7 +353,7 @@ export default function HomePage() {
 
           {/* Large logotype — Fabrica "fabrica® Studio" style */}
           <div className="py-6 flex flex-col sm:flex-row sm:items-end justify-between gap-2">
-            <span className="text-5xl sm:text-7xl lg:text-8xl font-extrabold text-text-primary tracking-tight leading-none select-none">
+            <span className="text-4xl sm:text-7xl lg:text-8xl font-extrabold text-text-primary tracking-tight leading-none select-none">
               Godwin Udu<span className="font-light text-text-muted">®</span>
             </span>
             <span className="text-sm text-text-muted self-end pb-1">Studio</span>

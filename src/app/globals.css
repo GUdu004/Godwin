@@ -1,3 +1,9 @@
+/* Hallmark : macrostructure: Marquee Hero : genre: editorial : theme: Fabrica Warm
+ * nav: N1b Canonical Desktop / Mobile Drawer : footer: Ft1 Mast-headed
+ * states: default : hover : focus : active : disabled : loading : error : success
+ * contrast: pass (50)
+ */
+
 @import "tailwindcss";
 
 :root {
@@ -10,7 +16,7 @@
   --color-bg-primary:   #EBEBEB;   /* Fabrica warm grey canvas */
   --color-bg-secondary: #F5F5F5;   /* slightly lighter panel bg */
   --color-bg-tertiary:  #E0E0E0;   /* deeper inset / hover state */
-  --color-bg-dark:      #111111;   /* full-bleed dark sections */
+  --color-bg-dark:      oklch(0.18 0.01 60); /* warm-tinted dark sections */
 
   /* Borders */
   --color-border-muted:  rgba(0, 0, 0, 0.08);
@@ -34,24 +40,48 @@
   /* Typography */
   --font-geist: var(--font-geist-sans), sans-serif;
   --font-inter: var(--font-inter), sans-serif;
+  --font-sans: var(--font-geist-sans), var(--font-inter), sans-serif;
 }
 
-/* ─── Scrollbar ──────────────────────────────────────── */
+/* Scrollbar */
 ::-webkit-scrollbar        { width: 5px; height: 5px; }
 ::-webkit-scrollbar-track  { background: var(--color-bg-primary); }
 ::-webkit-scrollbar-thumb  { background: #BBBBBB; border-radius: 3px; }
 ::-webkit-scrollbar-thumb:hover { background: #999999; }
 
-/* ─── Base ───────────────────────────────────────────── */
+/* Base */
+html, body {
+  overflow-x: clip;
+  max-width: 100%;
+}
+
 body {
   background-color: var(--color-bg-primary);
   color: var(--color-text-secondary);
-  font-family: var(--font-inter);
+  font-family: var(--font-sans);
   -webkit-font-smoothing: antialiased;
 }
 
-/* ─── Navbar glass (warm, not cold) ─────────────────── */
+h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: anywhere;
+  word-break: break-word;
+  min-width: 0;
+}
+
+/* Touch targets and single-line affordances */
+a, button {
+  touch-action: manipulation;
+}
+
+@media (pointer: coarse) {
+  button, a.inline-flex, a.flex, .btn {
+    min-height: 44px;
+  }
+}
+
+/* Navbar glass (warm backdrop blur with solid surface fallback) */
 .glass-header {
+  background-color: var(--color-bg-primary);
   background: rgba(235, 235, 235, 0.90);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);

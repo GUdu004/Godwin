@@ -62,8 +62,9 @@ export function ProjectCard({
           {/* Expand button */}
           <button
             onClick={(e) => { e.preventDefault(); setIsLightboxOpen(true); }}
-            className="absolute top-4 right-4 p-2 rounded-full bg-white/90 backdrop-blur-md text-text-primary opacity-0 group-hover:opacity-100 transition-opacity duration-300 hover:bg-white shadow-md"
+            className="absolute top-4 right-4 p-2.5 rounded-full bg-white/90 backdrop-blur-md text-text-primary opacity-100 sm:opacity-0 sm:group-hover:opacity-100 transition-opacity duration-300 hover:bg-white shadow-md"
             title="Expand Preview"
+            aria-label="Expand Preview"
           >
             <ArrowUpRight className="w-4 h-4" />
           </button>
@@ -86,7 +87,7 @@ export function ProjectCard({
           {/* Action button — navigate to case study */}
           <Link
             href={link}
-            className="mt-0.5 px-3 py-1.5 rounded-full bg-bg-tertiary border border-border-muted text-text-primary hover:bg-text-primary hover:text-bg-secondary transition-all duration-200 shadow-sm flex-shrink-0 flex items-center gap-1.5 text-xs font-semibold group/link"
+            className="mt-0.5 px-3 py-1.5 rounded-full bg-bg-tertiary border border-border-muted text-text-primary hover:bg-text-primary hover:text-bg-secondary transition-all duration-200 shadow-sm flex-shrink-0 flex items-center gap-1.5 text-xs font-semibold whitespace-nowrap group/link"
             title={`View ${title} case study`}
           >
             <span>View Project</span>
