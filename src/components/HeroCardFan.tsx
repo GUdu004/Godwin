@@ -87,8 +87,8 @@ const FAN_CARDS = [
     scale: 0.98,
   },
   {
-    img: "/images/projects/easyease/angle.gif",
-    alt: "EasyEase Angle Animation",
+    img: "/images/projects/proptii/slide_04.png",
+    alt: "Proptii Architecture Soft",
     translateY: -20,
     mobileTranslateY: 2,
     rotate: 2.0,
@@ -157,8 +157,8 @@ const FAN_CARDS = [
     scale: 1.18,
   },
   {
-    img: "/images/projects/proptii/slide_04.png",
-    alt: "Proptii Architecture Soft",
+    img: "/images/projects/easyease/angle.gif",
+    alt: "EasyEase Angle Animation",
     translateY: -160, // Atmospheric crest background card
     mobileTranslateY: -54,
     rotate: 1.0,
@@ -229,7 +229,7 @@ export function HeroCardFan() {
                   <img
                     src={card.img}
                     alt={card.alt}
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-cover object-left"
                     draggable={false}
                     loading={i < 4 ? "eager" : "lazy"}
                   />
