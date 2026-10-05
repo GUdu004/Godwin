@@ -11,6 +11,7 @@ import {
   ChevronRight,
 } from "lucide-react";
 import { ProjectCard } from "@/components/ProjectCard";
+import { HeroCardFan } from "@/components/HeroCardFan";
 
 const Linkedin = (props: React.SVGProps<SVGSVGElement>) => (
   <svg
@@ -142,44 +143,60 @@ export default function HomePage() {
       <main className="flex-grow">
 
         {/* ═══════════════════════════════════════════════════
-            1. HERO SECTION
+            1. HERO SECTION (avec anni Marquee Card Fan Layout)
         ════════════════════════════════════════════════════ */}
-        <section className="relative pt-16 pb-14 sm:pt-28 sm:pb-24 border-b border-white/10 overflow-hidden bg-bg-dark text-white">
-          <div className="max-w-7xl mx-auto px-6 flex flex-col items-start gap-8 z-10">
+        <section className="relative pt-6 sm:pt-20 pb-8 sm:pb-16 border-b border-border-muted bg-bg-primary text-text-primary min-h-0 sm:min-h-[85vh] flex flex-col justify-between overflow-x-hidden">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 w-full flex flex-col gap-6 sm:gap-10">
 
-            {/* Display headline with Fabrica's grey-fade on second half */}
-            <div className="max-w-5xl flex flex-col gap-6">
-              <h1 className="text-4xl sm:text-6xl lg:text-7xl font-extrabold text-white tracking-tight leading-[1.08] min-w-0">
-                Designing enterprise software,{" "}
-                <span className="text-white/40 font-extrabold">
-                  complex platform workflows &amp; developer tools.
+            {/* Hero Headline — avec anni staircase shape: reduced by 20% for refined editorial scale */}
+            <div className="w-full max-w-4xl">
+              <h1 className="font-normal text-text-primary leading-[1.14] tracking-[-0.03em] text-2xl sm:text-3xl md:text-[2.125rem] lg:text-[2.6rem] xl:text-[2.9rem]">
+                <span className="block pl-0 sm:pl-[24%] lg:pl-[30%] whitespace-normal sm:whitespace-nowrap">
+                  An independent product designer
+                </span>
+                <span className="block whitespace-normal sm:whitespace-nowrap">
+                  working with teams who are building
+                </span>
+                <span className="block whitespace-normal sm:whitespace-nowrap">
+                  complex platform workflows.
                 </span>
               </h1>
-              <p className="text-base sm:text-xl text-white/70 leading-relaxed font-normal max-w-3xl">
-                I design B2B SaaS platforms and communications infrastructure from omnichannel
-                notification systems and API-driven integrations to the design systems that scale them.
-                My focus: turning complex, multi-party workflows into interfaces developers can implement and users trust.
-              </p>
             </div>
 
-            {/* Single inline CTA — Fabrica keeps CTAs minimal */}
-            <div className="flex flex-wrap items-center gap-6 pt-2">
-              <a
-                href="#work"
-                className="inline-flex items-center gap-2 text-white font-semibold text-sm hover:gap-3 transition-[gap,color] duration-200 whitespace-nowrap group"
-              >
-                <span>View Work</span>
-                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-              </a>
+            {/* Floating Horizontal Card Cascade / Fan */}
+            <HeroCardFan />
+
+            {/* Bottom Section: Split Colophon (Left) + Massive Watermark Logotype (Right) */}
+            <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 sm:gap-8 pt-2 sm:pt-6">
+              
+              {/* Bottom Left — Fine-Print Colophon (2 columns, avec anni: all muted, no bold) */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-6 text-xs text-text-muted max-w-md">
+                <div className="flex flex-col gap-0.5">
+                  <span>Strategy-led product design.</span>
+                  <span>Systems thinking &amp; CPaaS architecture.</span>
+                </div>
+                <div className="flex flex-col gap-0.5">
+                  <span>For teams building</span>
+                  <span>platforms that scale.</span>
+                </div>
+              </div>
+
+              {/* Bottom Right — avec anni style logotype: right-aligned, ~33% width, no R sign, solid weight */}
+              <div className="w-full md:w-auto flex justify-start sm:justify-end items-end text-left sm:text-right">
+                <span className="hero-logotype text-4xl sm:text-5xl md:text-[3.75rem] lg:text-[4.75rem] xl:text-[5.25rem] select-none">
+                  GodwinUdu
+                </span>
+              </div>
             </div>
+
           </div>
         </section>
 
         {/* ═══════════════════════════════════════════════════
             2. FEATURED WORK — Asymmetric grid
         ════════════════════════════════════════════════════ */}
-        <section id="work" className="py-20 sm:py-28 border-b border-border-muted">
-          <div className="max-w-7xl mx-auto px-6 flex flex-col gap-14">
+        <section id="work" className="py-16 sm:py-28 border-b border-border-muted">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 flex flex-col gap-10 sm:gap-14">
 
             {/* Section header */}
             <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
@@ -340,13 +357,13 @@ export default function HomePage() {
           FOOTER — Fabrica logotype footer
       ════════════════════════════════════════════════════ */}
       <footer className="bg-bg-primary pt-8 pb-6">
-        <div className="max-w-7xl mx-auto px-6 flex flex-col gap-0">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 flex flex-col gap-0">
 
           {/* Nav links row */}
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 border-b border-border-muted text-xs text-text-muted">
             <div className="flex items-center gap-6">
-              <Link href="/#work" className="hover:text-text-primary transition-colors">Work</Link>
-              <Link href="/#skills" className="hover:text-text-primary transition-colors">Skills</Link>
+              <Link href="/#work" className="hover:text-text-primary transition-colors">Cases</Link>
+              <Link href="/#skills" className="hover:text-text-primary transition-colors">Services</Link>
               <Link href="/#about" className="hover:text-text-primary transition-colors">About</Link>
             </div>
           </div>
@@ -354,14 +371,14 @@ export default function HomePage() {
           {/* Large logotype — Fabrica "fabrica® Studio" style */}
           <div className="py-6 flex flex-col sm:flex-row sm:items-end justify-between gap-2">
             <span className="text-4xl sm:text-7xl lg:text-8xl font-extrabold text-text-primary tracking-tight leading-none select-none">
-              Godwin Udu<span className="font-light text-text-muted">®</span>
+              GodwinUdu<span className="font-light text-text-muted">®</span>
             </span>
             <span className="text-sm text-text-muted self-end pb-1">Studio</span>
           </div>
 
           {/* Copyright line */}
           <div className="pt-4 border-t border-border-muted text-[11px] text-text-muted">
-            © {new Date().getFullYear()} Godwin Udu. All rights reserved.
+            © {new Date().getFullYear()} GodwinUdu. All rights reserved.
           </div>
         </div>
       </footer>

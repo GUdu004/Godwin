@@ -13,25 +13,35 @@ export function Navbar() {
     <>
       {/* Top bar */}
       <header className="sticky top-0 z-50 w-full glass-header border-b border-border-muted">
-        <div className="max-w-7xl mx-auto px-6 h-14 flex items-center justify-between">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 h-14 flex items-center justify-between">
 
-          {/* Wordmark */}
-          <Link href="/" className="font-bold text-text-primary text-[21px] tracking-tight hover:opacity-70 transition-opacity" onClick={close}>
-            Godwin Udu
+          {/* Wordmark (Left) */}
+          <Link href="/" className="font-bold text-text-primary text-[19px] sm:text-[21px] tracking-tight hover:opacity-70 transition-opacity" onClick={close}>
+            GodwinUdu
           </Link>
 
-          {/* Desktop Navigation Links */}
-          <nav className="hidden sm:flex items-center gap-8 text-sm font-semibold text-text-secondary">
+          {/* Desktop Center Nav Links */}
+          <nav className="hidden sm:flex items-center gap-8 text-xs sm:text-sm font-medium text-text-secondary">
             <Link href="/#work" className="hover:text-text-primary transition-colors">
-              Work
+              Cases
             </Link>
             <Link href="/#skills" className="hover:text-text-primary transition-colors">
-              Skills
+              Services
             </Link>
             <Link href="/#about" className="hover:text-text-primary transition-colors">
               About
             </Link>
           </nav>
+
+          {/* Action Link (Right) */}
+          <div className="hidden sm:flex items-center">
+            <a
+              href="mailto:godwinudu01@gmail.com"
+              className="text-xs sm:text-sm font-medium text-text-primary hover:opacity-70 transition-opacity"
+            >
+              Inquire
+            </a>
+          </div>
 
           {/* Hamburger (Mobile only) */}
           <button
@@ -56,7 +66,7 @@ export function Navbar() {
 
       {/* Drawer overlay (Mobile only) */}
       <nav className={`nav-drawer ${open ? "open" : "closed"} z-40 sm:hidden`}>
-        <div className="max-w-7xl mx-auto px-6 w-full flex-grow flex flex-col pt-4 pb-10">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 w-full flex-grow flex flex-col pt-4 pb-10">
           {/* Close button (top-right, aligned with grid) */}
           <div className="flex justify-end h-14 items-center">
             <button
@@ -71,8 +81,8 @@ export function Navbar() {
           {/* Nav links */}
           <div className="flex flex-col gap-1 mt-4 sm:mt-8">
             {[
-              { label: "Work", href: "/#work" },
-              { label: "Skills", href: "/#skills" },
+              { label: "Cases", href: "/#work" },
+              { label: "Services", href: "/#skills" },
               { label: "About", href: "/#about" },
             ].map((item) => (
               <Link
@@ -87,13 +97,20 @@ export function Navbar() {
           </div>
 
           {/* Action Buttons */}
-          <div className="mt-auto pt-8 border-t border-border-muted flex flex-col sm:flex-row gap-4">
+          <div className="mt-auto pt-8 border-t border-border-muted flex flex-col gap-3">
+            <a
+              href="mailto:godwinudu01@gmail.com"
+              onClick={close}
+              className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-text-primary text-bg-primary font-semibold text-sm hover:bg-black/80 transition-all"
+            >
+              Inquire
+            </a>
             <a
               href="https://www.linkedin.com/in/godwin-udu/"
               target="_blank"
               rel="noopener noreferrer"
               onClick={close}
-              className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-text-primary text-bg-primary font-semibold text-sm hover:bg-black/80 transition-all"
+              className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl border border-border-muted text-text-primary font-semibold text-sm hover:bg-bg-tertiary transition-all"
             >
               LinkedIn
               <ExternalLink className="w-3.5 h-3.5" />
