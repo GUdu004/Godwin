@@ -1,7 +1,6 @@
 import React from "react";
 import Link from "next/link";
 import {
-  ArrowRight,
   Mail,
   Database,
   Layers,
@@ -34,10 +33,10 @@ export default function HomePage() {
     {
       id: "proptii",
       title: "Proptii",
-      subtitle: "B2B PropTech SaaS & CPaaS Notification Architecture",
+      subtitle: "B2B PropTech SaaS & Notification Architecture",
       description:
         "A unified digital ecosystem and communication pipeline designed to streamline customer experiences across property search, viewing, and referencing verification.",
-      tags: ["B2B SaaS", "CPaaS Architecture", "Design Systems", "API Webhooks"],
+      tags: ["B2B SaaS", "Notification Systems", "Design Systems", "API Webhooks"],
       metrics: [
         { label: "Processing Time", value: "85% Reduction" },
         { label: "Search-to-Viewing", value: "+34% Conversion" },
@@ -100,7 +99,7 @@ export default function HomePage() {
     },
     {
       number: "02",
-      category: "Systems & CPaaS Architecture",
+      category: "Systems & Notification Architecture",
       icon: <Database className="w-4 h-4" />,
       items: [
         "Omnichannel Notification Engines",
@@ -152,13 +151,13 @@ export default function HomePage() {
             <div className="w-full max-w-4xl">
               <h1 className="font-normal text-text-primary leading-[1.14] tracking-[-0.03em] text-2xl sm:text-3xl md:text-[2.125rem] lg:text-[2.6rem] xl:text-[2.9rem]">
                 <span className="block pl-0 sm:pl-[24%] lg:pl-[30%] whitespace-normal sm:whitespace-nowrap">
-                  An independent product designer
+                  Product designer who turns
                 </span>
                 <span className="block whitespace-normal sm:whitespace-nowrap">
-                  working with teams who are building
+                  complex platform workflows into
                 </span>
                 <span className="block whitespace-normal sm:whitespace-nowrap">
-                  complex platform workflows.
+                  products people actually adopt.
                 </span>
               </h1>
             </div>
@@ -170,14 +169,14 @@ export default function HomePage() {
             <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 sm:gap-8 pt-2 sm:pt-6">
               
               {/* Bottom Left — Fine-Print Colophon (2 columns, avec anni: all muted, no bold) */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-6 text-xs text-text-muted max-w-md">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-6 text-xs text-text-muted max-w-lg">
                 <div className="flex flex-col gap-0.5">
-                  <span>Strategy-led product design.</span>
-                  <span>Systems thinking &amp; CPaaS architecture.</span>
+                  <span>Process engineer by training.</span>
+                  <span>Work behind an 85% cut in processing time</span>
                 </div>
                 <div className="flex flex-col gap-0.5">
-                  <span>For teams building</span>
-                  <span>platforms that scale.</span>
+                  <span>and a student platform adopted</span>
+                  <span>by 70+ institutions.</span>
                 </div>
               </div>
 

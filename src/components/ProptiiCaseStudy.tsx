@@ -4,25 +4,9 @@ import React, { useState } from "react";
 import Link from "next/link";
 import { 
   ArrowLeft, 
-  ArrowRight,
-  TrendingUp, 
-  Clock, 
-  Users, 
-  ExternalLink, 
-  Check, 
-  AlertCircle,
-  Smartphone,
-  CheckCircle,
-  Layers,
-  ChevronRight,
-  Copy,
-  Info,
   ZoomIn,
-  CheckCircle2,
-  Zap,
-  ShieldCheck
+  CheckCircle2
 } from "lucide-react";
-import { Navbar } from "./Navbar";
 import { ImageLightbox } from "./ImageLightbox";
 
 export default function ProptiiCaseStudy() {
@@ -58,12 +42,6 @@ export default function ProptiiCaseStudy() {
       desc: "Multi-step verification wizard replacing paper forms with automated ID checks, credit checks, and landlord background validation.",
       image: "/images/projects/proptii/slide_06.png",
       tag: "Identity & Verification"
-    },
-    {
-      title: "5. Tokenized Design System & Figma Redline Specifications",
-      desc: "Standardized UI component library with tokenized spacing, accessibility contrast badges, and redline annotations for engineering handoff.",
-      image: "/images/projects/proptii/slide_20.png",
-      tag: "Design Systems & DevEx"
     }
   ];
 
@@ -82,7 +60,7 @@ export default function ProptiiCaseStudy() {
 
       {/* Hero Header */}
       <header className="max-w-7xl mx-auto px-6 py-8 flex flex-col gap-6">
-        <span className="section-label">Case Study: B2B PropTech SaaS & CPaaS Engine</span>
+        <span className="section-label">Case Study: B2B PropTech SaaS & Notification Engine</span>
         
         <h1 className="text-4xl sm:text-6xl font-extrabold tracking-tight text-text-primary">
           Proptii
@@ -103,7 +81,7 @@ export default function ProptiiCaseStudy() {
           </div>
           <div className="flex flex-col gap-1">
             <span className="text-text-muted font-mono uppercase tracking-wider">Domain</span>
-            <span className="text-text-primary font-bold">B2B SaaS / CPaaS Architecture</span>
+            <span className="text-text-primary font-bold">B2B SaaS / Notification Architecture</span>
           </div>
           <div className="flex flex-col gap-1">
             <span className="text-text-muted font-mono uppercase tracking-wider">Impact</span>
@@ -458,7 +436,7 @@ export default function ProptiiCaseStudy() {
           </div>
         </section>
 
-        {/* Section 4: CPaaS & API Architecture */}
+        {/* Section 4: Event-Driven & API Architecture */}
         <section className="p-8 sm:p-12 rounded-3xl border border-border-muted bg-bg-secondary fabrica-shadow flex flex-col gap-8">
           <div>
             <span className="section-label">04. Platform Architecture</span>
@@ -472,11 +450,11 @@ export default function ProptiiCaseStudy() {
 
           <div 
             className="relative group aspect-[16/9] w-full rounded-xl overflow-hidden border border-border-muted cursor-pointer"
-            onClick={() => setActiveImage({ src: "/images/projects/proptii/slide_17.png", alt: "Enterprise API Integration & CPaaS Architecture Diagram" })}
+            onClick={() => setActiveImage({ src: "/images/projects/proptii/slide_17.png", alt: "Enterprise API Integration & Notification Architecture Diagram" })}
           >
             <img
               src="/images/projects/proptii/slide_17.png"
-              alt="Enterprise API & CPaaS Engine Architecture Diagram"
+              alt="Enterprise API & Notification Engine Architecture Diagram"
               className="w-full h-full object-cover group-hover:scale-[1.01] transition-transform duration-500"
             />
             <div className="absolute bottom-4 right-4 px-3 py-1.5 rounded-lg bg-black/70 backdrop-blur-md text-white text-xs flex items-center gap-1.5">

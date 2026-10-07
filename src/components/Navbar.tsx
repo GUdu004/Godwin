@@ -35,12 +35,12 @@ export function Navbar() {
 
           {/* Action Link (Right) */}
           <div className="hidden sm:flex items-center">
-            <a
-              href="mailto:godwinudu01@gmail.com"
+            <Link
+              href="/#about"
               className="text-xs sm:text-sm font-medium text-text-primary hover:opacity-70 transition-opacity"
             >
               Inquire
-            </a>
+            </Link>
           </div>
 
           {/* Hamburger (Mobile only) */}
@@ -98,13 +98,13 @@ export function Navbar() {
 
           {/* Action Buttons */}
           <div className="mt-auto pt-8 border-t border-border-muted flex flex-col gap-3">
-            <a
-              href="mailto:godwinudu01@gmail.com"
+            <Link
+              href="/#about"
               onClick={close}
               className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-text-primary text-bg-primary font-semibold text-sm hover:bg-black/80 transition-all"
             >
               Inquire
-            </a>
+            </Link>
             <a
               href="https://www.linkedin.com/in/godwin-udu/"
               target="_blank"
