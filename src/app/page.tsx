@@ -331,7 +331,7 @@ export default function HomePage() {
               <div>
                 <h3 className="text-xl font-bold text-text-primary">Get In Touch</h3>
                 <p className="text-sm text-text-secondary mt-2 leading-relaxed">
-                  Currently discussing Product Designer roles. Feel free to reach out.
+                  Based in Sweden, open to European assignments.
                 </p>
               </div>
               <div className="flex flex-col gap-3">
