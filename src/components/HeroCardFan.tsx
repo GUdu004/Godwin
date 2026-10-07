@@ -195,7 +195,7 @@ export function HeroCardFan() {
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
       onClick={scrollToWork}
-      className="relative mt-4 sm:mt-10 mb-2 sm:mb-4 w-full overflow-hidden sm:overflow-visible cursor-pointer select-none py-4 sm:py-8"
+      className="relative mt-8 sm:-mt-8 md:-mt-14 lg:-mt-20 mb-2 sm:mb-4 w-full overflow-visible cursor-pointer select-none py-4 sm:py-4"
     >
       <div className="card-fan-container w-full relative flex items-end justify-center sm:justify-end px-2 sm:px-0 sm:pr-4 lg:pr-6">
         {/* S-curve sweeping arc: compact and fully visible on mobile, expanded on desktop */}

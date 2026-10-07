@@ -23,10 +23,10 @@ export function Navbar() {
           {/* Desktop Center Nav Links */}
           <nav className="hidden sm:flex items-center gap-8 text-xs sm:text-sm font-medium text-text-secondary">
             <Link href="/#work" className="hover:text-text-primary transition-colors">
-              Cases
+              Work
             </Link>
             <Link href="/#skills" className="hover:text-text-primary transition-colors">
-              Services
+              Skills
             </Link>
             <Link href="/#about" className="hover:text-text-primary transition-colors">
               About
@@ -81,8 +81,8 @@ export function Navbar() {
           {/* Nav links */}
           <div className="flex flex-col gap-1 mt-4 sm:mt-8">
             {[
-              { label: "Cases", href: "/#work" },
-              { label: "Services", href: "/#skills" },
+              { label: "Work", href: "/#work" },
+              { label: "Skills", href: "/#skills" },
               { label: "About", href: "/#about" },
             ].map((item) => (
               <Link
