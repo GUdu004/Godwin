@@ -331,7 +331,7 @@ export default function HomePage() {
               <div>
                 <h3 className="text-xl font-bold text-text-primary">Get In Touch</h3>
                 <p className="text-sm text-text-secondary mt-2 leading-relaxed">
-                  Based in Sweden, open to European assignments.
+                  Open to product development and product design roles. Based in Sweden, open to European assignments.
                 </p>
               </div>
               <div className="flex flex-col gap-3">
@@ -340,7 +340,7 @@ export default function HomePage() {
                   className="flex items-center gap-3 p-3.5 rounded-xl border border-border-muted text-text-primary font-medium text-sm hover:border-border-active hover:bg-bg-tertiary transition-all"
                 >
                   <Mail className="w-4 h-4 flex-shrink-0" />
-                  <span>Email Godwin</span>
+                  <span>Email godwinudu01@gmail.com</span>
                 </a>
                 <a
                   href="https://www.linkedin.com/in/godwin-udu/"
